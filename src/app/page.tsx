@@ -1,4 +1,5 @@
 import { TodoForm } from "@/components/TodoForm";
+import { TodoList } from "@/components/TodoList";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
 
         <div className="space-y-6">
           <TodoForm />
+          <TodoList />
         </div>
       </div>
     </div>

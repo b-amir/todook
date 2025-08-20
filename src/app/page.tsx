@@ -16,6 +16,7 @@ export default function HomePage() {
               height={100}
               className="h-36 w-auto drop-shadow-sm"
               style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.1))" }}
+              priority
             />
           </div>
           <h1 className="sr-only">Todook</h1>
@@ -24,12 +25,14 @@ export default function HomePage() {
           </p>
         </header>
 
-        <ErrorBoundary>
-          <div className="space-y-6">
-            <TodoForm />
-            <TodoList />
-          </div>
-        </ErrorBoundary>
+        <main>
+          <ErrorBoundary>
+            <div className="space-y-6">
+              <TodoForm />
+              <TodoList />
+            </div>
+          </ErrorBoundary>
+        </main>
       </div>
     </div>
   );

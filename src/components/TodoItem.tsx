@@ -51,16 +51,19 @@ export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
       <button
         role="checkbox"
         aria-checked={todo.completed}
+        aria-label={`Mark todo as ${
+          todo.completed ? "incomplete" : "complete"
+        }`}
         onClick={handleToggleComplete}
         disabled={todo.isPending}
         className={clsx(
-          "flex items-center justify-center w-5 h-5 border-2 rounded transition-colors",
+          "flex items-center justify-center w-5 h-5 border-2 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-brgreen-300 focus:ring-offset-2",
           todo.completed
             ? "bg-brgreen-300 border-brgreen-300 text-white"
             : "border-brgray-300 hover:border-brgreen-300"
         )}
       >
-        {todo.completed && <AiOutlineCheck size={12} />}
+        {todo.completed && <AiOutlineCheck size={12} aria-hidden="true" />}
       </button>
 
       <div className="flex-1">
@@ -85,15 +88,18 @@ export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
             </Button>
           </div>
         ) : (
-          <span
+          <button
+            type="button"
             className={clsx(
-              "cursor-pointer",
+              "text-left w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brpink-300 focus:ring-offset-2 rounded px-1 py-1",
               todo.completed && "line-through text-brgray-300"
             )}
             onClick={handleEdit}
+            aria-label={`Edit todo: ${todo.text}`}
+            disabled={todo.isPending}
           >
             {todo.text}
-          </span>
+          </button>
         )}
       </div>
 
@@ -101,20 +107,20 @@ export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
         <div className="flex items-center gap-1">
           {todo.isPending && <LoadingSpinner size="sm" />}
           <button
-            title="edit todo"
+            aria-label={`Edit todo: ${todo.text}`}
             onClick={handleEdit}
             disabled={todo.isPending}
-            className="p-1 text-brgray-300 hover:text-brpink-300 transition-colors"
+            className="p-1 text-brgray-300 hover:text-brpink-300 transition-colors focus:outline-none focus:ring-2 focus:ring-brpink-300 focus:ring-offset-1 rounded"
           >
-            <AiOutlineEdit size={16} />
+            <AiOutlineEdit size={16} aria-hidden="true" />
           </button>
           <button
-            title="delete todo"
+            aria-label={`Delete todo: ${todo.text}`}
             onClick={handleDelete}
             disabled={todo.isPending}
-            className="p-1 text-brgray-300 hover:text-red-500 transition-colors"
+            className="p-1 text-brgray-300 hover:text-brpink-500 transition-colors focus:outline-none focus:ring-2 focus:ring-brpink-500 focus:ring-offset-1 rounded"
           >
-            <AiOutlineDelete size={16} />
+            <AiOutlineDelete size={16} aria-hidden="true" />
           </button>
         </div>
       )}

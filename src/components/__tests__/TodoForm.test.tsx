@@ -16,6 +16,8 @@ describe("TodoForm", () => {
   const mockClearError = jest.fn();
 
   beforeEach(() => {
+    mockAddTodo.mockClear();
+    mockClearError.mockClear();
     mockUseTodoStore.mockReturnValue({
       addTodo: mockAddTodo,
       error: null,

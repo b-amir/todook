@@ -3,7 +3,7 @@
 import React, { useEffect, memo } from "react";
 import { FaGhost } from "react-icons/fa6";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
-import { TodoItem } from "@/components/TodoItem";
+import { TodoItem } from "@/components/todo-item/TodoItem";
 import { useTodoStore } from "@/store/todoStore";
 
 export const TodoList = memo(function TodoList() {

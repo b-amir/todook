@@ -1,0 +1,25 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "text": "Editable todo",
+      "completed": false,
+      "createdAt": "2025-10-27T10:00:00.000Z",
+      "updatedAt": "2025-10-27T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "text": "Original todo",
+      "completed": true,
+      "createdAt": "2025-10-26T10:00:00.000Z",
+      "updatedAt": "2025-10-26T10:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "text": "Another todo",
+      "completed": false,
+      "createdAt": "2025-10-25T10:00:00.000Z",
+      "updatedAt": "2025-10-25T10:00:00.000Z"
+    }
+  ]
+}

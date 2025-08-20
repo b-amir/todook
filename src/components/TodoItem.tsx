@@ -40,7 +40,8 @@ export function TodoItem({ todo }: { todo: Todo }) {
   };
 
   return (
-    <div
+    <li
+      role="listitem"
       className={clsx(
         "flex items-center gap-3 p-4 bg-white border rounded-lg transition-all",
         todo.completed && "bg-brgreen-50 border-brgreen-200",
@@ -48,6 +49,8 @@ export function TodoItem({ todo }: { todo: Todo }) {
       )}
     >
       <button
+        role="checkbox"
+        aria-checked={todo.completed}
         onClick={handleToggleComplete}
         disabled={todo.isPending}
         className={clsx(
@@ -64,6 +67,7 @@ export function TodoItem({ todo }: { todo: Todo }) {
         {isEditing ? (
           <div className="flex gap-2">
             <Input
+              data-testid="edit-input"
               value={editText}
               onChange={(e) => setEditText(e.target.value)}
               onKeyDown={(e) => {
@@ -97,6 +101,7 @@ export function TodoItem({ todo }: { todo: Todo }) {
         <div className="flex items-center gap-1">
           {todo.isPending && <LoadingSpinner size="sm" />}
           <button
+            title="edit todo"
             onClick={handleEdit}
             disabled={todo.isPending}
             className="p-1 text-brgray-300 hover:text-brpink-300 transition-colors"
@@ -104,6 +109,7 @@ export function TodoItem({ todo }: { todo: Todo }) {
             <AiOutlineEdit size={16} />
           </button>
           <button
+            title="delete todo"
             onClick={handleDelete}
             disabled={todo.isPending}
             className="p-1 text-brgray-300 hover:text-red-500 transition-colors"
@@ -112,6 +118,6 @@ export function TodoItem({ todo }: { todo: Todo }) {
           </button>
         </div>
       )}
-    </div>
+    </li>
   );
 }

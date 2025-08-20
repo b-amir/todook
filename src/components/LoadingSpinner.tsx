@@ -19,6 +19,7 @@ export function LoadingSpinner({
 
   return (
     <AiOutlineLoading3Quarters
+      data-testid="loading-spinner"
       className={clsx(
         "animate-spin text-current",
         sizeClasses[size],

@@ -34,10 +34,10 @@ export function TodoList() {
   }
 
   return (
-    <div className="space-y-3">
+    <ul role="list" className="space-y-3">
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
-    </div>
+    </ul>
   );
 }

@@ -7,7 +7,8 @@ import { useTodoStore } from "@/store/todoStore";
 
 export function TodoForm() {
   const [text, setText] = useState("");
-  const { addTodo, error, clearError } = useTodoStore();
+  const { todos, addTodo, error, clearError } = useTodoStore();
+  const isAdding = todos.some((todo) => todo.isPending);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +43,12 @@ export function TodoForm() {
           className="flex-1"
           maxLength={500}
         />
-        <Button type="submit" disabled={!text.trim()} variant="primary">
+        <Button
+          type="submit"
+          disabled={!text.trim() || isAdding}
+          loading={isAdding}
+          variant="primary"
+        >
           Add
         </Button>
       </form>

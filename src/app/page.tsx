@@ -1,5 +1,6 @@
 import { TodoForm } from "@/components/TodoForm";
 import { TodoList } from "@/components/TodoList";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 export default function HomePage() {
   return (
@@ -12,10 +13,12 @@ export default function HomePage() {
           </p>
         </header>
 
-        <div className="space-y-6">
-          <TodoForm />
-          <TodoList />
-        </div>
+        <ErrorBoundary>
+          <div className="space-y-6">
+            <TodoForm />
+            <TodoList />
+          </div>
+        </ErrorBoundary>
       </div>
     </div>
   );

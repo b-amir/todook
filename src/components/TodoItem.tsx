@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { AiOutlineCheck, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import clsx from "clsx";
 import { Button } from "@/components/Button";
@@ -9,7 +9,7 @@ import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { useTodoStore } from "@/store/todoStore";
 import type { Todo } from "@/types/todo";
 
-export function TodoItem({ todo }: { todo: Todo }) {
+export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
   const { updateTodo, deleteTodo } = useTodoStore();
@@ -120,4 +120,4 @@ export function TodoItem({ todo }: { todo: Todo }) {
       )}
     </li>
   );
-}
+});

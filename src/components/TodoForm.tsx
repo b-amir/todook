@@ -1,23 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, memo, useCallback } from "react";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { useTodoStore } from "@/store/todoStore";
 
-export function TodoForm() {
+export const TodoForm = memo(function TodoForm() {
   const [text, setText] = useState("");
   const { todos, addTodo, error, clearError } = useTodoStore();
   const isAdding = todos.some((todo) => todo.isPending);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
 
-    if (!text.trim()) return;
+      if (!text.trim()) return;
 
-    await addTodo(text.trim());
-    setText("");
-  };
+      await addTodo(text.trim());
+      setText("");
+    },
+    [text, addTodo]
+  );
 
   return (
     <div className="space-y-4">
@@ -54,4 +57,4 @@ export function TodoForm() {
       </form>
     </div>
   );
-}
+});

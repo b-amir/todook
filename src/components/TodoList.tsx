@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import { AiOutlineCheckSquare } from "react-icons/ai";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { TodoItem } from "@/components/TodoItem";
 import { useTodoStore } from "@/store/todoStore";
 
-export function TodoList() {
+export const TodoList = memo(function TodoList() {
   const { todos, isLoading, loadTodos } = useTodoStore();
 
   useEffect(() => {
@@ -40,4 +40,4 @@ export function TodoList() {
       ))}
     </ul>
   );
-}
+});

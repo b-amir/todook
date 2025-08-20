@@ -13,7 +13,7 @@ export function Input({ error, className, ...props }: InputProps) {
         "bg-white text-brgray-500 placeholder-brgray-100",
         error
           ? "border-red-300 focus:ring-red-500 focus:border-red-500"
-          : "border-brgray-100 focus:ring-brpink-300 focus:border-brpink-300",
+          : "border-brgray-100 focus:ring-brgray-100 focus:border-brgray-100",
         className
       )}
       {...props}

@@ -20,20 +20,28 @@
   --color-brgreen-200: #7ccbb6;
   --color-brgreen-300: #52af99;
 
+  --color-brgray-50: #e1e1e2;
   --color-brgray-100: #878789;
   --color-brgray-300: #414142;
   --color-brgray-500: #323232;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }

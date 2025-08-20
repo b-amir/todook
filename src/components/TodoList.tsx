@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, memo } from "react";
-import { AiOutlineCheckSquare } from "react-icons/ai";
+import { FaGhost } from "react-icons/fa6";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { TodoItem } from "@/components/TodoItem";
 import { useTodoStore } from "@/store/todoStore";
@@ -25,10 +25,15 @@ export const TodoList = memo(function TodoList() {
     return (
       <div className="text-center py-12 text-brgray-300">
         <div className="mb-4">
-          <AiOutlineCheckSquare size={48} className="mx-auto text-brgray-100" />
+          <FaGhost
+            size={48}
+            className="mx-auto text-brgray-50 animate-[float_3s_ease-in-out_infinite]"
+          />
         </div>
         <p className="text-lg font-medium mb-2">No todos yet</p>
-        <p className="text-sm">Add your first todo above to get started!</p>
+        <p className="text-sm text-brgray-100 italic font-light">
+          Add your first todo above to get started!
+        </p>
       </div>
     );
   }

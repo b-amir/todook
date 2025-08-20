@@ -18,15 +18,15 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    "flex items-center justify-center cursor-pointer font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm hover:shadow-md active:scale-95";
+    "flex items-center justify-center cursor-pointer font-medium rounded-lg transition-all duration-200 focus:outline-none focus:shadow-[0_0_0_2px_rgba(255,255,255,0.5)] hover:shadow-md active:scale-95 min-h-12 min-w-24";
 
   const variantClasses = {
     primary:
-      "bg-gradient-to-r from-brpink-300 to-brpink-200 hover:from-brpink-200 hover:to-brpink-300 text-white focus:ring-brpink-300 border border-brpink-400/20",
+      "bg-gradient-to-b from-brpink-100 to-brpink-200 hover:from-brpink-200 hover:to-brpink-300 text-white focus:shadow-[0_0_0_2px_rgba(236,72,153,0.5)] border border-brpink-400/20",
     secondary:
-      "bg-gradient-to-r from-brgray-50 to-white hover:from-brgray-100 hover:to-brgray-50 text-brgray-600 focus:ring-brgray-300 border border-brgray-200",
+      "bg-gradient-to-r from-brgray-50 to-white hover:from-brgray-100 hover:to-brgray-50 text-brgray-600 focus:shadow-[0_0_0_2px_rgba(209,213,219,0.5)] border border-brgray-200",
     danger:
-      "bg-gradient-to-r from-brpink-500 to-brpink-600 hover:from-brpink-600 hover:to-brpink-500 text-white focus:ring-brpink-500 border border-brpink-400/20",
+      "bg-gradient-to-r from-brpink-500 to-brpink-600 hover:from-brpink-600 hover:to-brpink-500 text-white focus:shadow-[0_0_0_2px_rgba(236,72,153,0.5)] border border-brpink-400/20",
   };
 
   const sizeClasses = {
@@ -42,7 +42,7 @@ export function Button({
         variantClasses[variant],
         sizeClasses[size],
         (disabled || loading) &&
-          "opacity-50 cursor-not-allowed scale-100 hover:scale-100",
+          "!cursor-not-allowed scale-100 hover:scale-100",
         className
       )}
       disabled={disabled || loading}

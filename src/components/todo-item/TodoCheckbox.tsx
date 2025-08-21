@@ -26,6 +26,7 @@ export const TodoCheckbox = memo(function TodoCheckbox({
           ? "bg-brgreen-500 border-brgreen-500 text-white"
           : "border-gray-300 hover:border-brgreen-400"
       )}
+      data-testid="todo-checkbox"
     >
       {completed && <MdCheck size={12} aria-hidden="true" />}
     </button>

@@ -19,6 +19,7 @@ export const TodoList = memo(function TodoList() {
         className="flex items-center justify-center py-12"
         role="status"
         aria-live="polite"
+        data-testid="todo-list-loading"
       >
         <LoadingSpinner size="lg" />
         <span className="sr-only">Loading todos...</span>
@@ -32,6 +33,7 @@ export const TodoList = memo(function TodoList() {
         className="text-center py-12 text-brgray-300"
         role="status"
         aria-live="polite"
+        data-testid="todo-list-empty"
       >
         <div className="mb-4">
           <FaGhost
@@ -54,6 +56,7 @@ export const TodoList = memo(function TodoList() {
       className="space-y-3"
       aria-label="Todo list"
       aria-describedby={todos.length > 0 ? "todo-count" : undefined}
+      data-testid="todo-list"
     >
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />

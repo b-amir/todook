@@ -21,13 +21,14 @@ export const TodoActions = memo(function TodoActions({
   onDelete,
 }: TodoActionsProps) {
   return (
-    <div className="flex items-center gap-1 w-16 justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+    <div className="flex items-center gap-1 w-16 justify-end opacity-100 transition-opacity">
       {isEditing ? (
         <>
           <button
             onClick={onCancel}
             aria-label="Cancel editing"
             className="p-1.5 text-gray-400 hover:text-brpink-500 transition-colors rounded"
+            data-testid="cancel-edit-button"
           >
             <MdEditOff size={16} />
           </button>
@@ -35,6 +36,7 @@ export const TodoActions = memo(function TodoActions({
             onClick={onSave}
             aria-label="Save changes"
             className="p-1.5 text-gray-400 hover:text-brgreen-500 transition-colors rounded"
+            data-testid="save-edit-button"
           >
             <MdCheck size={16} />
           </button>
@@ -46,6 +48,7 @@ export const TodoActions = memo(function TodoActions({
             onClick={onEdit}
             disabled={todo.isPending ?? false}
             className="p-1.5 text-gray-400 hover:text-brpink-500 transition-colors rounded"
+            data-testid="edit-todo-button"
           >
             <MdEdit size={16} aria-hidden="true" />
           </button>
@@ -54,6 +57,7 @@ export const TodoActions = memo(function TodoActions({
             onClick={onDelete}
             disabled={todo.isPending ?? false}
             className="p-1.5 text-gray-400 hover:text-brpink-500 transition-color rounded"
+            data-testid="delete-todo-button"
           >
             <MdDelete size={16} aria-hidden="true" />
           </button>

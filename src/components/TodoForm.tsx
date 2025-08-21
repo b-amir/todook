@@ -15,12 +15,13 @@ export const TodoForm = memo(function TodoForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
+    watch,
     reset,
     clearErrors,
   } = useForm<TodoFormValues>({
     resolver: zodResolver(todoSchema),
-    mode: "onSubmit",
+    mode: "onChange",
   });
 
   const {
@@ -30,6 +31,9 @@ export const TodoForm = memo(function TodoForm() {
     clearError: clearServerError,
   } = useTodoStore();
   const isAdding = todos.some((todo) => todo.isPending);
+
+  const textValue = watch("text");
+  const hasValidText = textValue && textValue.trim().length >= 3;
 
   const onSubmit = useCallback(
     async (data: TodoFormValues) => {
@@ -55,7 +59,7 @@ export const TodoForm = memo(function TodoForm() {
           <Input
             {...register("text")}
             placeholder="Add a new todo..."
-            className={`flex-1 ${
+            className={`flex-1 shadow-sm ${
               errors.text
                 ? "border-brpink-300 focus:border-brpink-500 focus:shadow-[0_0_0_2px_rgba(236,72,153,0.5)]"
                 : ""
@@ -63,13 +67,15 @@ export const TodoForm = memo(function TodoForm() {
             maxLength={200}
             aria-label="New todo text"
             aria-invalid={!!errors.text}
+            data-testid="todo-input"
           />
           <Button
             type="submit"
-            disabled={isAdding || !!errors.text}
+            disabled={isAdding || !hasValidText}
             loading={isAdding}
             variant="primary"
             aria-label={isAdding ? "Adding todo..." : "Add todo"}
+            data-testid="add-todo-button"
           >
             Add
           </Button>
@@ -85,6 +91,7 @@ export const TodoForm = memo(function TodoForm() {
                   onClick={handleClearError}
                   className="text-brpink-400 hover:text-brpink-600 focus:outline-none focus:shadow-[0_0_0_2px_rgba(236,72,153,0.5)] rounded p-1 text-xs"
                   aria-label="Dismiss error message"
+                  data-testid="dismiss-error-button"
                 >
                   ×
                 </button>

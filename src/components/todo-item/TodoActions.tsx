@@ -1,5 +1,6 @@
 import React, { memo } from "react";
-import { MdEdit, MdDelete, MdEditOff, MdCheck } from "react-icons/md";
+import { MdEdit, MdDelete, MdEditOff } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
 import clsx from "clsx";
 import type { Todo } from "@/types/todo";
 
@@ -46,7 +47,7 @@ export const TodoActions = memo(function TodoActions({
             )}
             data-testid="save-edit-button"
           >
-            <MdCheck size={16} />
+            <FaCheck size={14} className="ml-0.5" />
           </button>
         </>
       ) : (

@@ -53,7 +53,7 @@ export const TodoForm = memo(function TodoForm() {
           <Input
             {...register("text")}
             placeholder="Add a new todo..."
-            className={`flex-1 shadow-sm ${
+            className={`flex-1 shadow-sm backdrop-blur-2xl ${
               errors.text
                 ? "border-brpink-300 focus:border-brpink-500 focus:shadow-[0_0_0_2px_rgba(236,72,153,0.5)]"
                 : ""

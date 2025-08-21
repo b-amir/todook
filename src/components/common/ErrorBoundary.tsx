@@ -2,7 +2,7 @@
 
 import React, { Component, ReactNode } from "react";
 import { AiOutlineExclamationCircle, AiOutlineReload } from "react-icons/ai";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/Button";
 
 interface Props {
   children: ReactNode;

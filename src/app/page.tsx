@@ -1,7 +1,7 @@
-import { TodoForm } from "@/components/TodoForm";
-import { TodoList } from "@/components/TodoList";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { Logo } from "@/components/Logo";
+import { TodoForm } from "@/components/todo-form/TodoForm";
+import { TodoList } from "@/components/todo-list/TodoList";
+import { ErrorBoundary } from "@/components/common/ErrorBoundary";
+import { Logo } from "@/components/ui/Logo";
 
 export default function HomePage() {
   return (

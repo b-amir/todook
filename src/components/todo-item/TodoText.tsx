@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import clsx from "clsx";
-import { Input } from "@/components/Input";
+import { Input } from "@/components/ui/Input";
 import type { Todo } from "@/types/todo";
 import type { UseFormRegister, FieldErrors } from "react-hook-form";
 

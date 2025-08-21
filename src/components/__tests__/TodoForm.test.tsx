@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import { TodoForm } from "../TodoForm";
+import { TodoForm } from "../todo-form/TodoForm";
 import { useTodoStore } from "@/store/todoStore";
 
 jest.mock("@/store/todoStore");

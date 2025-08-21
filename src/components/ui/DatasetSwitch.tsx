@@ -24,7 +24,7 @@ export function DatasetSwitch() {
           <button
             onClick={() => setDemoMode(false)}
             disabled={!isDemoMode}
-            className={`flex items-center gap-1.5 px-2 py-1.5 text-xs font-medium border transition-colors duration-200 ${
+            className={`flex items-center gap-1.5 px-2 py-1.5 text-xs font-semibold border transition-colors duration-200 ${
               !isDemoMode
                 ? "bg-green-50 text-green-700 border-green-200 cursor-default"
                 : "bg-white text-gray-600 border-gray-300 hover:bg-gray-50 cursor-pointer"
@@ -36,14 +36,14 @@ export function DatasetSwitch() {
           <button
             onClick={() => setDemoMode(true)}
             disabled={isDemoMode}
-            className={`flex items-center gap-1.5 px-2 py-1.5 text-xs font-medium border-l-0 border transition-colors duration-200 ${
+            className={`flex items-center gap-1.5 px-2 py-1.5 text-xs font-semibold border-l-0 border transition-colors duration-200 ${
               isDemoMode
                 ? "bg-green-50 text-green-700 border-green-200 cursor-default"
                 : "bg-white text-gray-600 border-gray-300 hover:bg-gray-50 cursor-pointer"
             } rounded-r-md`}
           >
             <ImLab size={12} />
-            Demo
+            Demo data
           </button>
         </div>
       </div>

@@ -51,8 +51,8 @@ export const TodoText = memo(function TodoText({
   return (
     <span
       className={clsx(
-        "text-left cursor-pointer transition-colors hover:text-gray-700 break-all whitespace-pre-wrap",
-        todo.completed && "line-through text-brgreen-700",
+        "text-left cursor-pointer transition-colors hover:text-gray-700 break-all whitespace-pre-wrap font-semibold",
+        todo.completed && "line-through text-brgreen-400/80",
         (todo.isPending ?? false) && "cursor-not-allowed"
       )}
       onClick={onToggle}

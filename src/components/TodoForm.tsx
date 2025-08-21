@@ -1,28 +1,20 @@
 "use client";
 
 import React, { memo, useCallback } from "react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { useTodoStore } from "@/store/todoStore";
-import { todoSchema } from "@/types/todo";
-
-type TodoFormValues = z.infer<typeof todoSchema>;
+import { useTodoForm } from "@/hooks/useTodoForm";
 
 export const TodoForm = memo(function TodoForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     watch,
     reset,
     clearErrors,
-  } = useForm<TodoFormValues>({
-    resolver: zodResolver(todoSchema),
-    mode: "onChange",
-  });
+  } = useTodoForm({ mode: "onChange" });
 
   const {
     todos,
@@ -30,16 +22,18 @@ export const TodoForm = memo(function TodoForm() {
     error,
     clearError: clearServerError,
   } = useTodoStore();
-  const isAdding = todos.some((todo) => todo.isPending);
+  const isAdding = todos.some(
+    (todo) => todo.isPending && todo.id.startsWith("temp-")
+  );
 
   const textValue = watch("text");
   const hasValidText = textValue && textValue.trim().length >= 3;
 
   const onSubmit = useCallback(
-    async (data: TodoFormValues) => {
+    async (data: { text: string }) => {
       try {
         await addTodo(data.text);
-        reset();
+        reset(undefined, { keepErrors: false });
       } catch {
         // Error is handled by the store
       }

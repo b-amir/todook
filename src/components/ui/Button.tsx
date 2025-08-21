@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
+import { ButtonBase as MuiButtonBase } from "@mui/material";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "danger";
@@ -18,7 +19,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    "flex items-center justify-center cursor-pointer font-medium rounded-lg transition-all duration-200 focus:outline-none focus:shadow-[0_0_0_2px_rgba(255,255,255,0.5)] shadow-md hover:shadow-sm active:scale-95 min-h-12 min-w-24";
+    "flex items-center justify-center cursor-pointer font-medium !text-white !rounded-lg transition-all duration-200 focus:outline-none focus:shadow-[0_0_0_2px_rgba(255,255,255,0.5)] shadow-md hover:shadow-sm active:scale-95 min-h-12 min-w-24";
 
   const variantClasses = {
     primary:
@@ -36,7 +37,7 @@ export function Button({
   };
 
   return (
-    <button
+    <MuiButtonBase
       className={clsx(
         baseClasses,
         variantClasses[variant],
@@ -49,6 +50,6 @@ export function Button({
       {...props}
     >
       {loading ? <LoadingSpinner size="sm" /> : children}
-    </button>
+    </MuiButtonBase>
   );
 }

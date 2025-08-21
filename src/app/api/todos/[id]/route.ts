@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { updateTodo, deleteTodo } from "@/lib/todoService";
+import { API_CONSTANTS } from "@/constants/api";
 
 export async function PATCH(
   request: NextRequest,
@@ -11,8 +12,8 @@ export async function PATCH(
 
     if (!updates || Object.keys(updates).length === 0) {
       return NextResponse.json(
-        { error: "Update data is required" },
-        { status: 400 }
+        { error: API_CONSTANTS.ERROR_MESSAGES.UPDATE_DATA_REQUIRED },
+        { status: API_CONSTANTS.STATUS_BAD_REQUEST }
       );
     }
 
@@ -20,8 +21,8 @@ export async function PATCH(
     return NextResponse.json({ todo });
   } catch {
     return NextResponse.json(
-      { error: "Failed to update todo" },
-      { status: 500 }
+      { error: API_CONSTANTS.ERROR_MESSAGES.FAILED_TO_UPDATE_TODO },
+      { status: API_CONSTANTS.STATUS_INTERNAL_SERVER_ERROR }
     );
   }
 }
@@ -36,8 +37,8 @@ export async function DELETE(
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json(
-      { error: "Failed to delete todo" },
-      { status: 500 }
+      { error: API_CONSTANTS.ERROR_MESSAGES.FAILED_TO_DELETE_TODO },
+      { status: API_CONSTANTS.STATUS_INTERNAL_SERVER_ERROR }
     );
   }
 }

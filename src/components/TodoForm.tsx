@@ -5,6 +5,7 @@ import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { useTodoStore } from "@/store/todoStore";
 import { useTodoForm } from "@/hooks/useTodoForm";
+import { VALIDATION_CONSTANTS } from "@/constants/validation";
 
 export const TodoForm = memo(function TodoForm() {
   const {
@@ -27,7 +28,9 @@ export const TodoForm = memo(function TodoForm() {
   );
 
   const textValue = watch("text");
-  const hasValidText = textValue && textValue.trim().length >= 3;
+  const hasValidText =
+    textValue &&
+    textValue.trim().length >= VALIDATION_CONSTANTS.TODO_TEXT_MIN_LENGTH;
 
   const onSubmit = useCallback(
     async (data: { text: string }) => {
@@ -58,7 +61,7 @@ export const TodoForm = memo(function TodoForm() {
                 ? "border-brpink-300 focus:border-brpink-500 focus:shadow-[0_0_0_2px_rgba(236,72,153,0.5)]"
                 : ""
             }`}
-            maxLength={200}
+            maxLength={VALIDATION_CONSTANTS.TODO_TEXT_MAX_LENGTH}
             aria-label="New todo text"
             aria-invalid={!!errors.text}
             data-testid="todo-input"

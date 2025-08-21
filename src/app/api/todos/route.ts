@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllTodos, createTodo } from "@/lib/todoService";
+import { getAllTodos, createTodo, deleteAllTodos } from "@/lib/todoService";
 import { API_CONSTANTS } from "@/constants/api";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
-    const todos = await getAllTodos();
+    const { searchParams } = new URL(request.url);
+    const isDemo = searchParams.get("demo") === "true";
+
+    const todos = await getAllTodos(isDemo);
     return NextResponse.json({ todos });
   } catch {
     return NextResponse.json(
@@ -16,7 +19,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
-    const { text } = await request.json();
+    const { text, isDemo = false } = await request.json();
 
     if (!text?.trim()) {
       return NextResponse.json(
@@ -25,7 +28,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const todo = await createTodo(text.trim());
+    const todo = await createTodo(text.trim(), isDemo);
     return NextResponse.json(
       { todo },
       { status: API_CONSTANTS.STATUS_CREATED }
@@ -33,6 +36,25 @@ export async function POST(request: NextRequest) {
   } catch {
     return NextResponse.json(
       { error: API_CONSTANTS.ERROR_MESSAGES.FAILED_TO_CREATE_TODO },
+      { status: API_CONSTANTS.STATUS_INTERNAL_SERVER_ERROR }
+    );
+  }
+}
+
+export async function DELETE(request: NextRequest) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const isDemo = searchParams.get("demo") === "true";
+
+    await deleteAllTodos(isDemo);
+
+    return NextResponse.json(
+      { message: API_CONSTANTS.SUCCESS_MESSAGES.ALL_TODOS_DELETED },
+      { status: API_CONSTANTS.STATUS_OK }
+    );
+  } catch {
+    return NextResponse.json(
+      { error: API_CONSTANTS.ERROR_MESSAGES.FAILED_TO_DELETE_ALL_TODOS },
       { status: API_CONSTANTS.STATUS_INTERNAL_SERVER_ERROR }
     );
   }

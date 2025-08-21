@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useMemo, memo } from "react";
+import React, { useRef, useMemo, memo } from "react";
 import { VariableSizeList as List } from "react-window";
 import { TodoListLoading } from "./TodoListLoading";
 import { TodoListEmpty } from "./TodoListEmpty";
@@ -10,7 +10,7 @@ import { useFastScrolling, useAutoScrollToTop } from "@/hooks";
 import { TODO_LIST_CONSTANTS } from "@/constants/todoList";
 
 export const TodoList = memo(function TodoList() {
-  const { todos, isLoading, loadTodos } = useTodoStore();
+  const { todos, isLoading } = useTodoStore();
   const listRef = useRef<List | null>(null);
 
   const { isScrollingFast, handleScroll } = useFastScrolling(
@@ -18,15 +18,11 @@ export const TodoList = memo(function TodoList() {
   );
   const stableTodos = useMemo(() => todos, [todos]);
 
-  useEffect(() => {
-    loadTodos();
-  }, [loadTodos]);
-
   useAutoScrollToTop(stableTodos, listRef);
 
   const containerClassName = useMemo(
     () =>
-      `h-[60vh] min-h-[400px] ${TODO_LIST_CONSTANTS.SCROLLBAR_CLASS} bg-brgray-50/20 border shadow-inner border-brgray-50 py-4 px-1 rounded-lg`,
+      `flex flex-col flex-grow h-full w-full bg-brgray-50/20 border shadow-inner border-brgray-50 rounded-lg overflow-hidden py-2`,
     []
   );
 

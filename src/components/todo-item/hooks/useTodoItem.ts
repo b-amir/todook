@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { useTodoStore } from "@/store/todoStore";
-import { useTodoForm } from "../../todo-form/hooks/useTodoForm";
+import { useTodoForm } from "@/components/todo-form/hooks/useTodoForm";
 import type { Todo } from "@/types/todo";
 
 interface UseTodoItemOptions {
@@ -9,7 +9,7 @@ interface UseTodoItemOptions {
 
 export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
   const [isEditing, setIsEditing] = useState(false);
-  const { updateTodo, deleteTodo } = useTodoStore();
+  const { isDemoMode, updateTodo, deleteTodo } = useTodoStore();
 
   const {
     register,
@@ -19,8 +19,8 @@ export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
   } = useTodoForm({ defaultText: todo.text, mode: "onBlur" });
 
   const handleToggleComplete = useCallback(() => {
-    updateTodo(todo.id, { completed: !todo.completed });
-  }, [updateTodo, todo.id, todo.completed]);
+    updateTodo(todo.id, { completed: !todo.completed }, isDemoMode);
+  }, [updateTodo, todo.id, todo.completed, isDemoMode]);
 
   const handleEdit = useCallback(() => {
     setIsEditing(true);
@@ -31,14 +31,14 @@ export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
     async (data: { text: string }) => {
       try {
         if (data.text !== todo.text) {
-          await updateTodo(todo.id, { text: data.text });
+          await updateTodo(todo.id, { text: data.text }, isDemoMode);
         }
         setIsEditing(false);
       } catch (error) {
         console.error("Failed to update todo:", error);
       }
     },
-    [updateTodo, todo.id, todo.text]
+    [updateTodo, todo.id, todo.text, isDemoMode]
   );
 
   const handleCancelEdit = useCallback(() => {
@@ -47,8 +47,8 @@ export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
   }, [reset, todo.text]);
 
   const handleDelete = useCallback(() => {
-    deleteTodo(todo.id);
-  }, [deleteTodo, todo.id]);
+    deleteTodo(todo.id, isDemoMode);
+  }, [deleteTodo, todo.id, isDemoMode]);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {

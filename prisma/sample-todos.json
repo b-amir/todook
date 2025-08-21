@@ -1,0 +1,1420 @@
+[
+  {
+    "id": "aab7368d-7baf-45a8-8052-f38e5dff803e",
+    "text": "Pay utility bills",
+    "completed": true,
+    "createdAt": "2025-08-08T09:38:37.949550Z",
+    "updatedAt": "2025-08-04T09:12:37.949550Z"
+  },
+  {
+    "id": "3d28cdc4-3844-40ad-86a9-221149d9d100",
+    "text": "Study clean architecture principles",
+    "completed": false,
+    "createdAt": "2025-08-17T10:12:37.949550Z",
+    "updatedAt": "2025-07-10T08:13:37.949550Z"
+  },
+  {
+    "id": "79638649-9245-4cb1-9768-4ff4aa632cae",
+    "text": "Book dentist appointment",
+    "completed": false,
+    "createdAt": "2025-08-12T07:49:37.949550Z",
+    "updatedAt": "2025-07-09T07:34:37.949550Z"
+  },
+  {
+    "id": "04fc7224-7dec-4b09-a90b-07d6e0fa0d2d",
+    "text": "Test deployment on CodeSandbox",
+    "completed": false,
+    "createdAt": "2025-07-27T09:18:37.949550Z",
+    "updatedAt": "2025-07-27T12:03:37.949550Z"
+  },
+  {
+    "id": "d39a3cb9-fbc6-4b34-9bbe-84815b038a84",
+    "text": "Set up daily coding challenge",
+    "completed": false,
+    "createdAt": "2025-06-28T04:56:37.949550Z",
+    "updatedAt": "2025-07-20T05:35:37.949550Z"
+  },
+  {
+    "id": "7ffbac53-1c79-45ce-ae3d-83b91c6b91ea",
+    "text": "Study clean architecture principles",
+    "completed": true,
+    "createdAt": "2025-07-21T07:08:37.949550Z",
+    "updatedAt": "2025-07-19T06:22:37.949550Z"
+  },
+  {
+    "id": "da8cf730-ddd1-4ec8-94b4-71b46518efaa",
+    "text": "Research European work visa requirements",
+    "completed": false,
+    "createdAt": "2025-07-20T10:24:37.949550Z",
+    "updatedAt": "2025-08-21T04:20:37.949550Z",
+    "isPending": true
+  },
+  {
+    "id": "1bb07063-25a4-419f-b250-1d16bac93624",
+    "text": "Prepare for job interview",
+    "completed": true,
+    "createdAt": "2025-07-20T05:22:37.949550Z",
+    "updatedAt": "2025-08-06T05:16:37.949550Z"
+  },
+  {
+    "id": "af09e327-18c8-4c32-98c4-713cf933b55c",
+    "text": "Book dentist appointment",
+    "completed": true,
+    "createdAt": "2025-07-04T07:23:37.949550Z",
+    "updatedAt": "2025-07-15T05:05:37.949550Z"
+  },
+  {
+    "id": "49b53402-f0be-436a-ac45-ffdabaa337a3",
+    "text": "Buy birthday gift for friend",
+    "completed": false,
+    "createdAt": "2025-08-18T04:40:37.949550Z",
+    "updatedAt": "2025-07-27T06:42:37.949550Z"
+  },
+  {
+    "id": "6429d524-704a-4774-a18a-d6cfb1775fce",
+    "text": "Register for frontend webinar",
+    "completed": true,
+    "createdAt": "2025-06-28T07:46:37.949550Z",
+    "updatedAt": "2025-07-13T08:17:37.949550Z"
+  },
+  {
+    "id": "102a2af2-db81-492d-bfba-8d7c265b71ff",
+    "text": "Set up daily coding challenge",
+    "completed": true,
+    "createdAt": "2025-07-15T05:59:37.949550Z",
+    "updatedAt": "2025-08-13T08:49:37.949550Z"
+  },
+  {
+    "id": "ca9c9b25-658a-4049-a659-771af842488b",
+    "text": "Finish reading React docs",
+    "completed": false,
+    "createdAt": "2025-07-15T07:33:37.949550Z",
+    "updatedAt": "2025-07-08T12:40:37.949550Z"
+  },
+  {
+    "id": "915254c4-c00d-47fb-8a5c-526473b3c450",
+    "text": "Record educational YouTube video",
+    "completed": true,
+    "createdAt": "2025-06-29T04:29:37.949550Z",
+    "updatedAt": "2025-07-01T05:55:37.949550Z"
+  },
+  {
+    "id": "c362efa7-d28e-472c-88a8-439ef5dbf4ba",
+    "text": "Call Sarah about project update",
+    "completed": false,
+    "createdAt": "2025-08-04T06:25:37.949550Z",
+    "updatedAt": "2025-07-16T09:38:37.949550Z"
+  },
+  {
+    "id": "c7d55585-e060-4dcd-b4d4-95e28a789aa8",
+    "text": "Set up daily coding challenge",
+    "completed": true,
+    "createdAt": "2025-07-20T13:00:37.949550Z",
+    "updatedAt": "2025-06-30T04:33:37.949550Z"
+  },
+  {
+    "id": "af898855-e1fb-438e-9ba0-5db390401a24",
+    "text": "Check LinkedIn messages",
+    "completed": true,
+    "createdAt": "2025-08-11T04:23:37.949550Z",
+    "updatedAt": "2025-06-22T10:41:37.949550Z"
+  },
+  {
+    "id": "b784f058-3436-4d94-92cc-b8b9eef0fe92",
+    "text": "Plan weekend trip",
+    "completed": true,
+    "createdAt": "2025-08-16T10:56:37.949550Z",
+    "updatedAt": "2025-08-19T10:14:37.949550Z"
+  },
+  {
+    "id": "74e50ec7-9ba2-4a52-9000-0800bb589b20",
+    "text": "Refactor old codebase",
+    "completed": true,
+    "createdAt": "2025-07-25T10:18:37.949550Z",
+    "updatedAt": "2025-06-28T04:11:37.949550Z"
+  },
+  {
+    "id": "c373badb-dce0-4972-a9f5-199bc39277f5",
+    "text": "Test deployment on CodeSandbox",
+    "completed": false,
+    "createdAt": "2025-08-10T07:19:37.949550Z",
+    "updatedAt": "2025-07-08T12:23:37.949550Z"
+  },
+  {
+    "id": "9b25422c-bc58-4fc4-84c5-3c0854e09864",
+    "text": "Update software on laptop",
+    "completed": false,
+    "createdAt": "2025-07-07T04:31:37.949550Z",
+    "updatedAt": "2025-06-25T06:02:37.949550Z"
+  },
+  {
+    "id": "0f27e021-56d2-4294-8284-09544cff4a1c",
+    "text": "Brainstorm names for new 'ook' app",
+    "completed": true,
+    "createdAt": "2025-07-03T10:04:37.949550Z",
+    "updatedAt": "2025-08-15T12:18:37.949550Z"
+  },
+  {
+    "id": "6306f18e-43a1-4922-b26e-290a87ce1f7e",
+    "text": "Complete Dutch grammar exercise",
+    "completed": true,
+    "createdAt": "2025-06-22T08:11:37.949550Z",
+    "updatedAt": "2025-07-28T09:54:37.949550Z"
+  },
+  {
+    "id": "8eaebbf3-d9a7-4433-9d04-95682c26fc24",
+    "text": "Review pull requests",
+    "completed": false,
+    "createdAt": "2025-07-30T05:46:37.949550Z",
+    "updatedAt": "2025-07-04T05:08:37.949550Z"
+  },
+  {
+    "id": "a1509406-2997-4a50-b3b2-3f74cb17ba61",
+    "text": "Submit visa documents",
+    "completed": false,
+    "createdAt": "2025-07-19T04:14:37.949550Z",
+    "updatedAt": "2025-07-13T06:45:37.949550Z"
+  },
+  {
+    "id": "e8fa0d16-b04b-41fa-968e-f0ef8fc8ba4f",
+    "text": "Refine product requirements",
+    "completed": true,
+    "createdAt": "2025-08-14T12:30:37.949550Z",
+    "updatedAt": "2025-08-09T09:18:37.949550Z"
+  },
+  {
+    "id": "fd04909a-2b68-4227-889e-61a97c87d856",
+    "text": "Review pull requests",
+    "completed": false,
+    "createdAt": "2025-07-29T13:17:37.949550Z",
+    "updatedAt": "2025-08-11T06:14:37.949550Z"
+  },
+  {
+    "id": "f91a1415-5f02-4327-bfa3-f493c3131f7e",
+    "text": "Test optimistic UI update logic",
+    "completed": true,
+    "createdAt": "2025-07-16T08:23:37.949550Z",
+    "updatedAt": "2025-06-30T10:56:37.949550Z"
+  },
+  {
+    "id": "f9a0108b-11f4-4398-a772-6a2626e6cbda",
+    "text": "Set up Prisma schema for project",
+    "completed": true,
+    "createdAt": "2025-07-11T12:44:37.949550Z",
+    "updatedAt": "2025-07-04T05:43:37.949550Z"
+  },
+  {
+    "id": "2579bcd5-6810-48be-8c56-abef47cd08ff",
+    "text": "Call Sarah about project update",
+    "completed": true,
+    "createdAt": "2025-08-05T12:58:37.949550Z",
+    "updatedAt": "2025-08-13T07:31:37.949550Z"
+  },
+  {
+    "id": "355f369e-c1f3-4937-a636-27c87296ff83",
+    "text": "Brainstorm names for new 'ook' app",
+    "completed": false,
+    "createdAt": "2025-07-26T06:49:37.949550Z",
+    "updatedAt": "2025-08-10T04:14:37.949550Z",
+    "isPending": true
+  },
+  {
+    "id": "a8d237ac-8f83-488d-b372-a995ff2701b5",
+    "text": "Prepare monthly expenses spreadsheet",
+    "completed": true,
+    "createdAt": "2025-07-03T12:02:37.949550Z",
+    "updatedAt": "2025-06-22T07:09:37.949550Z"
+  },
+  {
+    "id": "0a677891-69da-4ba8-bc1a-26792600588a",
+    "text": "Draft new feature spec",
+    "completed": true,
+    "createdAt": "2025-07-25T12:27:37.949550Z",
+    "updatedAt": "2025-08-15T06:28:37.949550Z"
+  },
+  {
+    "id": "4fe9d825-f8d7-4dcd-9399-21c0df0e7f17",
+    "text": "Submit visa documents",
+    "completed": true,
+    "createdAt": "2025-07-07T11:36:37.949550Z",
+    "updatedAt": "2025-08-02T09:43:37.949550Z"
+  },
+  {
+    "id": "caad5db1-e375-4636-9483-072ed647cd6d",
+    "text": "Test the offline mode",
+    "completed": false,
+    "createdAt": "2025-08-05T11:26:37.949550Z",
+    "updatedAt": "2025-08-21T09:09:37.949550Z"
+  },
+  {
+    "id": "8619b4e2-07b2-4aef-9a26-d5e1d73f8205",
+    "text": "Plan weekend trip",
+    "completed": false,
+    "createdAt": "2025-07-15T10:47:37.949550Z",
+    "updatedAt": "2025-08-06T05:50:37.949550Z"
+  },
+  {
+    "id": "c7883f23-cad0-4561-9b7f-1008d063d559",
+    "text": "Update app dependencies",
+    "completed": true,
+    "createdAt": "2025-07-23T11:05:37.949550Z",
+    "updatedAt": "2025-07-26T07:10:37.949550Z"
+  },
+  {
+    "id": "9907bf46-39ff-4f48-b9a1-5c011e4d981d",
+    "text": "Optimize list rendering with react-window",
+    "completed": false,
+    "createdAt": "2025-07-15T06:28:37.949550Z",
+    "updatedAt": "2025-07-30T06:51:37.949550Z"
+  },
+  {
+    "id": "553eab27-0687-4734-9a8c-0d889f996699",
+    "text": "Check LinkedIn messages",
+    "completed": false,
+    "createdAt": "2025-07-29T11:38:37.949550Z",
+    "updatedAt": "2025-07-14T11:11:37.949550Z"
+  },
+  {
+    "id": "84d739a8-ee99-4349-a1df-3498789682ca",
+    "text": "Review pull requests",
+    "completed": true,
+    "createdAt": "2025-07-12T03:47:37.949550Z",
+    "updatedAt": "2025-08-02T11:53:37.949550Z"
+  },
+  {
+    "id": "6fb8ebdd-7089-4629-bc09-adc48750835d",
+    "text": "Water the indoor plants",
+    "completed": true,
+    "createdAt": "2025-07-09T11:11:37.949550Z",
+    "updatedAt": "2025-06-22T09:30:37.949550Z"
+  },
+  {
+    "id": "d36b4b5d-e9df-4d94-8209-b6eed774bd62",
+    "text": "Update software on laptop",
+    "completed": true,
+    "createdAt": "2025-07-22T13:01:37.949550Z",
+    "updatedAt": "2025-08-03T10:46:37.949550Z"
+  },
+  {
+    "id": "f49a0b18-3cb7-4c34-9ae7-52237570e3ec",
+    "text": "Draft new feature spec",
+    "completed": true,
+    "createdAt": "2025-07-25T10:17:37.949550Z",
+    "updatedAt": "2025-07-25T09:15:37.949550Z"
+  },
+  {
+    "id": "5109ee84-ba75-4ea3-a217-8af1f36be8fe",
+    "text": "Refactor old codebase",
+    "completed": false,
+    "createdAt": "2025-07-15T07:35:37.949550Z",
+    "updatedAt": "2025-07-17T09:01:37.949550Z"
+  },
+  {
+    "id": "2f6f4236-17ba-480f-8473-57603aa7a013",
+    "text": "Buy birthday gift for friend",
+    "completed": false,
+    "createdAt": "2025-08-16T08:03:37.949550Z",
+    "updatedAt": "2025-08-01T10:19:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "1c49eec5-860b-4e2c-a96d-64098b432397",
+    "text": "Water the indoor plants",
+    "completed": true,
+    "createdAt": "2025-06-29T09:38:37.949550Z",
+    "updatedAt": "2025-07-11T04:29:37.949550Z"
+  },
+  {
+    "id": "cb522722-a720-4ce9-b6bc-f2e3eaab0723",
+    "text": "Finish novel",
+    "completed": false,
+    "createdAt": "2025-08-14T06:12:37.949550Z",
+    "updatedAt": "2025-07-15T10:47:37.949550Z"
+  },
+  {
+    "id": "bccd500f-24da-480b-9820-2720b481a94f",
+    "text": "Write a blog post about Zustand",
+    "completed": false,
+    "createdAt": "2025-07-14T09:52:37.949550Z",
+    "updatedAt": "2025-08-09T06:37:37.949550Z",
+    "isPending": true
+  },
+  {
+    "id": "ff225cdc-867a-4215-8ac5-51370e44fee0",
+    "text": "Set up Prisma schema for project",
+    "completed": true,
+    "createdAt": "2025-08-19T11:45:37.949550Z",
+    "updatedAt": "2025-07-24T04:55:37.949550Z"
+  },
+  {
+    "id": "8c08e2ba-e25f-458f-be11-189997780703",
+    "text": "Research European work visa requirements",
+    "completed": true,
+    "createdAt": "2025-07-06T08:30:37.949550Z",
+    "updatedAt": "2025-07-26T10:19:37.949550Z"
+  },
+  {
+    "id": "4a842812-64d1-4ae3-8bbd-feef3bd0b3f2",
+    "text": "Update software on laptop",
+    "completed": true,
+    "createdAt": "2025-08-18T11:06:37.949550Z",
+    "updatedAt": "2025-07-10T11:36:37.949550Z"
+  },
+  {
+    "id": "b05d5671-6f6f-4259-afbc-a51d7190d26f",
+    "text": "Check LinkedIn messages",
+    "completed": false,
+    "createdAt": "2025-07-20T08:33:37.949550Z",
+    "updatedAt": "2025-07-20T08:57:37.949550Z"
+  },
+  {
+    "id": "ce6c2b9b-d0aa-4b70-917f-9bf00ae83cd0",
+    "text": "Finish reading React docs",
+    "completed": false,
+    "createdAt": "2025-07-25T09:49:37.949550Z",
+    "updatedAt": "2025-08-10T08:16:37.949550Z"
+  },
+  {
+    "id": "dcebc9ac-e3fe-4224-af18-9bb2f577f218",
+    "text": "Plan weekend trip",
+    "completed": false,
+    "createdAt": "2025-07-11T06:25:37.949550Z",
+    "updatedAt": "2025-06-29T05:28:37.949550Z"
+  },
+  {
+    "id": "481c0977-2d68-40bf-a702-dc03402dcba2",
+    "text": "Study clean architecture principles",
+    "completed": true,
+    "createdAt": "2025-07-01T11:14:37.949550Z",
+    "updatedAt": "2025-07-31T12:40:37.949550Z"
+  },
+  {
+    "id": "d6018b4e-90a2-4719-98eb-57dfd96adefd",
+    "text": "Schedule project demo",
+    "completed": false,
+    "createdAt": "2025-07-05T11:37:37.949550Z",
+    "updatedAt": "2025-07-26T06:34:37.949550Z"
+  },
+  {
+    "id": "cb4a86db-2815-40ff-b035-e276e8c532c9",
+    "text": "Review competitor products",
+    "completed": false,
+    "createdAt": "2025-06-24T08:58:37.949550Z",
+    "updatedAt": "2025-07-04T10:52:37.949550Z"
+  },
+  {
+    "id": "29432c23-b7ef-4416-a014-603cc51029e6",
+    "text": "Buy groceries for dinner",
+    "completed": false,
+    "createdAt": "2025-07-09T09:21:37.949550Z",
+    "updatedAt": "2025-07-14T06:46:37.949550Z"
+  },
+  {
+    "id": "365a611a-e35c-4c88-b9d8-1bb44fcd2ed0",
+    "text": "Update portfolio site",
+    "completed": true,
+    "createdAt": "2025-07-19T09:34:37.949550Z",
+    "updatedAt": "2025-06-23T07:52:37.949550Z"
+  },
+  {
+    "id": "e6dd9ccc-3f78-4371-9d04-de2b351e4775",
+    "text": "Prepare monthly expenses spreadsheet",
+    "completed": false,
+    "createdAt": "2025-08-01T11:49:37.949550Z",
+    "updatedAt": "2025-07-06T12:18:37.949550Z"
+  },
+  {
+    "id": "0900e502-e466-419c-8106-9c6511bc2e15",
+    "text": "Register for frontend webinar",
+    "completed": false,
+    "createdAt": "2025-06-27T12:50:37.949550Z",
+    "updatedAt": "2025-07-28T07:43:37.949550Z"
+  },
+  {
+    "id": "637bcf4a-d4f7-4eb5-8a46-e0c4f600d222",
+    "text": "Watch a romantic comedy",
+    "completed": true,
+    "createdAt": "2025-07-29T04:51:37.949550Z",
+    "updatedAt": "2025-07-14T06:58:37.949550Z"
+  },
+  {
+    "id": "e35c2da1-6de8-4804-9b07-ff2f7854950a",
+    "text": "Review competitor products",
+    "completed": false,
+    "createdAt": "2025-08-17T12:24:37.949550Z",
+    "updatedAt": "2025-06-23T05:45:37.949550Z"
+  },
+  {
+    "id": "2010cb1c-060d-419b-8779-32c5b0fa6122",
+    "text": "Enroll in new TypeScript course",
+    "completed": false,
+    "createdAt": "2025-06-27T04:38:37.949550Z",
+    "updatedAt": "2025-07-06T03:53:37.949550Z"
+  },
+  {
+    "id": "eccc74b8-e349-47cc-858f-4ab11f2d55d4",
+    "text": "Review code style guide",
+    "completed": false,
+    "createdAt": "2025-06-27T10:45:37.949550Z",
+    "updatedAt": "2025-07-14T07:57:37.949550Z"
+  },
+  {
+    "id": "5a66b3d3-57e6-4fe4-8d36-863906dee85f",
+    "text": "Clean the apartment",
+    "completed": false,
+    "createdAt": "2025-06-25T13:03:37.949550Z",
+    "updatedAt": "2025-06-23T10:40:37.949550Z"
+  },
+  {
+    "id": "ae499abc-bbe3-4ead-9c00-ad7b261d1a41",
+    "text": "Review pull requests",
+    "completed": true,
+    "createdAt": "2025-08-04T09:12:37.949550Z",
+    "updatedAt": "2025-07-24T08:24:37.949550Z"
+  },
+  {
+    "id": "17905e73-d8a2-4d3d-bf39-a33564fa0be2",
+    "text": "Try a new recipe",
+    "completed": false,
+    "createdAt": "2025-07-10T05:58:37.949550Z",
+    "updatedAt": "2025-07-04T09:19:37.949550Z"
+  },
+  {
+    "id": "2617020f-ea67-45a4-8ad9-cbb729b04651",
+    "text": "Try a new recipe",
+    "completed": true,
+    "createdAt": "2025-08-17T10:42:37.949550Z",
+    "updatedAt": "2025-07-04T06:05:37.949550Z"
+  },
+  {
+    "id": "52cdc2f3-ce02-4783-b31d-b38c5a439a37",
+    "text": "Practice speaking German",
+    "completed": true,
+    "createdAt": "2025-07-07T11:17:37.949550Z",
+    "updatedAt": "2025-06-25T04:25:37.949550Z"
+  },
+  {
+    "id": "de281342-30e6-4ced-8803-435ff04bc339",
+    "text": "Write unit tests for todo reducer",
+    "completed": true,
+    "createdAt": "2025-06-26T06:01:37.949550Z",
+    "updatedAt": "2025-07-25T12:57:37.949550Z"
+  },
+  {
+    "id": "89f82472-fe20-4094-8773-f626384a3263",
+    "text": "Review competitor products",
+    "completed": false,
+    "createdAt": "2025-08-04T08:54:37.949550Z",
+    "updatedAt": "2025-07-27T11:05:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "aabe31d7-2173-48ce-9719-c19c6c3985fa",
+    "text": "Update software on laptop",
+    "completed": true,
+    "createdAt": "2025-06-30T07:14:37.949550Z",
+    "updatedAt": "2025-08-09T04:48:37.949550Z"
+  },
+  {
+    "id": "09d673f0-3b6e-4e13-9f78-4a43108ed452",
+    "text": "Brainstorm names for new 'ook' app",
+    "completed": true,
+    "createdAt": "2025-07-10T12:47:37.949550Z",
+    "updatedAt": "2025-07-12T13:22:37.949550Z"
+  },
+  {
+    "id": "2d4cd219-142c-4ee1-b378-df389f68dcac",
+    "text": "Record educational YouTube video",
+    "completed": false,
+    "createdAt": "2025-07-10T07:38:37.949550Z",
+    "updatedAt": "2025-08-07T12:00:37.949550Z"
+  },
+  {
+    "id": "c42b69cf-b7f1-4c25-a3ab-2a6e699c0030",
+    "text": "Practice speaking German",
+    "completed": false,
+    "createdAt": "2025-08-01T06:27:37.949550Z",
+    "updatedAt": "2025-08-01T10:31:37.949550Z"
+  },
+  {
+    "id": "ac73edde-ec1e-4479-b348-3ae99f133a8a",
+    "text": "Optimize list rendering with react-window",
+    "completed": false,
+    "createdAt": "2025-06-29T09:00:37.949550Z",
+    "updatedAt": "2025-07-02T06:37:37.949550Z"
+  },
+  {
+    "id": "84fb2363-562d-40e7-9a55-2554f0dbe6ea",
+    "text": "Book dentist appointment",
+    "completed": false,
+    "createdAt": "2025-07-03T06:17:37.949550Z",
+    "updatedAt": "2025-08-10T04:46:37.949550Z"
+  },
+  {
+    "id": "efdc6bf1-e129-4fa9-a7e2-d9fda0ded78c",
+    "text": "Plan weekend trip",
+    "completed": false,
+    "createdAt": "2025-07-18T11:25:37.949550Z",
+    "updatedAt": "2025-07-13T13:37:37.949550Z"
+  },
+  {
+    "id": "b9a490c8-cde7-448c-9b08-808f744ceb86",
+    "text": "Refactor old codebase",
+    "completed": false,
+    "createdAt": "2025-07-17T07:21:37.949550Z",
+    "updatedAt": "2025-06-27T10:32:37.949550Z"
+  },
+  {
+    "id": "021c1467-8332-4ee2-ab06-6d8c6aa906d3",
+    "text": "Create end-to-end test cases",
+    "completed": false,
+    "createdAt": "2025-07-13T07:26:37.949550Z",
+    "updatedAt": "2025-06-29T12:16:37.949550Z"
+  },
+  {
+    "id": "d4135fc3-6f5e-44fe-babd-0e6835727b5c",
+    "text": "Register for frontend webinar",
+    "completed": false,
+    "createdAt": "2025-06-29T06:35:37.949550Z",
+    "updatedAt": "2025-08-18T09:02:37.949550Z"
+  },
+  {
+    "id": "439c73cf-14ed-4ed2-99cc-cd2c1365e5b4",
+    "text": "Pay utility bills",
+    "completed": false,
+    "createdAt": "2025-06-23T09:28:37.949550Z",
+    "updatedAt": "2025-08-02T08:05:37.949550Z"
+  },
+  {
+    "id": "9e780dc1-7bdc-4aee-8980-43e5124dbe7d",
+    "text": "Set up daily coding challenge",
+    "completed": false,
+    "createdAt": "2025-07-07T11:17:37.949550Z",
+    "updatedAt": "2025-07-25T11:00:37.949550Z"
+  },
+  {
+    "id": "ed31476a-4440-41b7-82c2-a31b40d912b4",
+    "text": "Complete Dutch grammar exercise",
+    "completed": false,
+    "createdAt": "2025-07-12T03:47:37.949550Z",
+    "updatedAt": "2025-08-17T06:56:37.949550Z"
+  },
+  {
+    "id": "7ea94851-8bff-4264-90d6-2b7c64796a13",
+    "text": "Refine product requirements",
+    "completed": true,
+    "createdAt": "2025-07-22T04:35:37.949550Z",
+    "updatedAt": "2025-07-11T04:21:37.949550Z"
+  },
+  {
+    "id": "6abd57cb-650b-434f-9288-dd8570b4e737",
+    "text": "Review competitor products",
+    "completed": false,
+    "createdAt": "2025-07-03T13:39:37.949550Z",
+    "updatedAt": "2025-07-17T06:04:37.949550Z"
+  },
+  {
+    "id": "ee22147a-ed9b-469d-8a91-bd0b3d45b532",
+    "text": "Complete Dutch grammar exercise",
+    "completed": true,
+    "createdAt": "2025-07-15T10:36:37.949550Z",
+    "updatedAt": "2025-07-21T04:24:37.949550Z"
+  },
+  {
+    "id": "662ca55e-9943-429f-b715-e31150c13785",
+    "text": "Register new domain for app",
+    "completed": true,
+    "createdAt": "2025-07-09T12:45:37.949550Z",
+    "updatedAt": "2025-07-28T12:32:37.949550Z"
+  },
+  {
+    "id": "820c5834-d332-4d73-b619-e48e62ed66e0",
+    "text": "Prepare monthly expenses spreadsheet",
+    "completed": true,
+    "createdAt": "2025-08-01T09:23:37.949550Z",
+    "updatedAt": "2025-06-25T13:32:37.949550Z"
+  },
+  {
+    "id": "5f89859f-e8f7-4b8f-ad13-23bea7109dea",
+    "text": "Review code style guide",
+    "completed": true,
+    "createdAt": "2025-07-31T04:24:37.949550Z",
+    "updatedAt": "2025-06-22T04:35:37.949550Z"
+  },
+  {
+    "id": "db67de7c-2e1f-441e-b78a-119362a491a4",
+    "text": "Lookup Dutch language lessons online",
+    "completed": false,
+    "createdAt": "2025-07-22T07:26:37.949550Z",
+    "updatedAt": "2025-06-29T06:15:37.949550Z"
+  },
+  {
+    "id": "4248384f-fa54-4112-a9cf-1ac172e5f926",
+    "text": "Schedule project demo",
+    "completed": false,
+    "createdAt": "2025-08-18T09:29:37.949550Z",
+    "updatedAt": "2025-07-20T06:35:37.949550Z"
+  },
+  {
+    "id": "bda0700b-d167-4d80-a066-d5d6d95efb29",
+    "text": "Watch a romantic comedy",
+    "completed": true,
+    "createdAt": "2025-07-12T07:02:37.949550Z",
+    "updatedAt": "2025-07-13T08:19:37.949550Z"
+  },
+  {
+    "id": "911ea6bd-8aab-4276-933f-d60fa11189eb",
+    "text": "Optimize list rendering with react-window",
+    "completed": false,
+    "createdAt": "2025-08-08T05:52:37.949550Z",
+    "updatedAt": "2025-07-21T12:33:37.949550Z"
+  },
+  {
+    "id": "0c620edc-53bc-47a9-9bf4-982acdade2af",
+    "text": "Watch a romantic comedy",
+    "completed": false,
+    "createdAt": "2025-07-12T11:31:37.949550Z",
+    "updatedAt": "2025-07-06T06:21:37.949550Z"
+  },
+  {
+    "id": "de33e0ab-2aa9-49ac-bed3-d7af3515f791",
+    "text": "Research European work visa requirements",
+    "completed": true,
+    "createdAt": "2025-07-11T12:16:37.949550Z",
+    "updatedAt": "2025-08-19T04:55:37.949550Z"
+  },
+  {
+    "id": "bfe19e6c-2132-4f90-bc47-582f7ecdec38",
+    "text": "Finish novel",
+    "completed": false,
+    "createdAt": "2025-07-25T10:06:37.949550Z",
+    "updatedAt": "2025-08-18T11:28:37.949550Z"
+  },
+  {
+    "id": "6ec9c975-5311-4b4e-b61b-1cfac68925f7",
+    "text": "Register new domain for app",
+    "completed": true,
+    "createdAt": "2025-06-28T07:33:37.949550Z",
+    "updatedAt": "2025-07-08T11:26:37.949550Z"
+  },
+  {
+    "id": "c3971f45-a6cc-4724-a0e2-6bb389207474",
+    "text": "Set up Prisma schema for project",
+    "completed": true,
+    "createdAt": "2025-07-30T09:17:37.949550Z",
+    "updatedAt": "2025-08-01T07:14:37.949550Z"
+  },
+  {
+    "id": "cbd93049-6e0d-4c78-b6de-9c845c9d1a76",
+    "text": "Test deployment on CodeSandbox",
+    "completed": true,
+    "createdAt": "2025-06-23T05:30:37.949550Z",
+    "updatedAt": "2025-07-08T13:11:37.949550Z"
+  },
+  {
+    "id": "9207fcee-41c2-416d-ac22-5cc76bae5bfa",
+    "text": "Test optimistic UI update logic",
+    "completed": false,
+    "createdAt": "2025-07-16T07:59:37.949550Z",
+    "updatedAt": "2025-08-16T08:57:37.949550Z"
+  },
+  {
+    "id": "57783697-fe7c-4aec-96f4-c3651cb63597",
+    "text": "Catch up with parents",
+    "completed": false,
+    "createdAt": "2025-08-09T09:26:37.949550Z",
+    "updatedAt": "2025-08-12T07:43:37.949550Z"
+  },
+  {
+    "id": "3a0f8f76-b84a-4a9c-9596-7288bd485a2f",
+    "text": "Optimize list rendering with react-window",
+    "completed": true,
+    "createdAt": "2025-07-05T08:50:37.949550Z",
+    "updatedAt": "2025-07-29T10:06:37.949550Z"
+  },
+  {
+    "id": "be22be5f-d0a0-4cce-bfca-c284028996b6",
+    "text": "Write unit tests for todo reducer",
+    "completed": false,
+    "createdAt": "2025-07-22T11:00:37.949550Z",
+    "updatedAt": "2025-07-22T07:12:37.949550Z"
+  },
+  {
+    "id": "9cc1dd2c-7a30-4e2b-bdb5-afb8337d9456",
+    "text": "Register new domain for app",
+    "completed": false,
+    "createdAt": "2025-08-07T06:28:37.949550Z",
+    "updatedAt": "2025-07-22T10:12:37.949550Z"
+  },
+  {
+    "id": "8ecda042-eda1-4d31-88a5-68f776507732",
+    "text": "Optimize list rendering with react-window",
+    "completed": true,
+    "createdAt": "2025-08-19T10:46:37.949550Z",
+    "updatedAt": "2025-07-17T09:58:37.949550Z"
+  },
+  {
+    "id": "711acc17-fc2b-4c86-97ec-9dda0245c2b3",
+    "text": "Refactor old codebase",
+    "completed": true,
+    "createdAt": "2025-08-12T11:09:37.949550Z",
+    "updatedAt": "2025-08-06T03:58:37.949550Z"
+  },
+  {
+    "id": "9e1b20ef-443e-4c03-a29a-4c30a16a071f",
+    "text": "Set up Prisma schema for project",
+    "completed": false,
+    "createdAt": "2025-07-26T06:00:37.949550Z",
+    "updatedAt": "2025-08-13T04:06:37.949550Z"
+  },
+  {
+    "id": "e757afd3-12a2-490f-a729-556a27b87f87",
+    "text": "Catch up with parents",
+    "completed": false,
+    "createdAt": "2025-08-14T09:38:37.949550Z",
+    "updatedAt": "2025-06-23T04:59:37.949550Z"
+  },
+  {
+    "id": "7450d305-8bf2-4e37-b53e-0714b6543735",
+    "text": "Test the offline mode",
+    "completed": true,
+    "createdAt": "2025-08-21T07:45:37.949550Z",
+    "updatedAt": "2025-07-01T08:58:37.949550Z"
+  },
+  {
+    "id": "6e01ca50-d59b-4ed1-a04f-135523e04853",
+    "text": "Clean the apartment",
+    "completed": true,
+    "createdAt": "2025-08-08T06:18:37.949550Z",
+    "updatedAt": "2025-06-29T06:01:37.949550Z"
+  },
+  {
+    "id": "fe6f6d16-a377-4071-bae5-54b80c996caf",
+    "text": "Draft new feature spec",
+    "completed": false,
+    "createdAt": "2025-08-16T13:12:37.949550Z",
+    "updatedAt": "2025-06-22T12:59:37.949550Z"
+  },
+  {
+    "id": "b0fbabf1-fa24-4fa0-8721-59870af99726",
+    "text": "Backup personal files",
+    "completed": true,
+    "createdAt": "2025-08-20T06:20:37.949550Z",
+    "updatedAt": "2025-07-01T09:31:37.949550Z"
+  },
+  {
+    "id": "766a23d0-931b-4e60-8508-f4da8a3d396d",
+    "text": "Write unit tests for todo reducer",
+    "completed": false,
+    "createdAt": "2025-07-15T05:51:37.949550Z",
+    "updatedAt": "2025-07-05T03:48:37.949550Z"
+  },
+  {
+    "id": "fde55343-286f-4663-8092-2b0ee6208efc",
+    "text": "Enroll in new TypeScript course",
+    "completed": false,
+    "createdAt": "2025-07-11T04:38:37.949550Z",
+    "updatedAt": "2025-07-09T10:22:37.949550Z"
+  },
+  {
+    "id": "123dcc91-a14a-4bc5-8893-a87bd731b4e3",
+    "text": "Try a new recipe",
+    "completed": true,
+    "createdAt": "2025-06-23T10:56:37.949550Z",
+    "updatedAt": "2025-06-27T04:03:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "b5f8fe25-2e86-4e6d-ab67-8050592c6754",
+    "text": "Call Sarah about project update",
+    "completed": false,
+    "createdAt": "2025-06-23T10:40:37.949550Z",
+    "updatedAt": "2025-08-01T04:34:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "7581705e-06b3-4b3a-b26c-4f7d80633b67",
+    "text": "Connect with old colleagues",
+    "completed": true,
+    "createdAt": "2025-08-06T06:14:37.949550Z",
+    "updatedAt": "2025-07-02T12:22:37.949550Z"
+  },
+  {
+    "id": "28f637ae-6df8-4505-b9fd-05ec9897f9a7",
+    "text": "Record educational YouTube video",
+    "completed": false,
+    "createdAt": "2025-08-17T06:52:37.949550Z",
+    "updatedAt": "2025-06-22T09:52:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "1855a307-99e8-4e3a-8e0e-521afd7dcac5",
+    "text": "Register for frontend webinar",
+    "completed": false,
+    "createdAt": "2025-07-08T05:09:37.949550Z",
+    "updatedAt": "2025-08-16T08:15:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "a0ede257-3751-4f78-be42-2d55a9ea65e6",
+    "text": "Watch a romantic comedy",
+    "completed": false,
+    "createdAt": "2025-08-13T11:53:37.949550Z",
+    "updatedAt": "2025-08-09T07:45:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "5eabe278-f8fe-4408-9d35-0d82022c4516",
+    "text": "Lookup Dutch language lessons online",
+    "completed": true,
+    "createdAt": "2025-06-25T05:50:37.949550Z",
+    "updatedAt": "2025-06-23T04:38:37.949550Z"
+  },
+  {
+    "id": "9577f4da-ffbe-4838-8af0-3af890071097",
+    "text": "Update app dependencies",
+    "completed": true,
+    "createdAt": "2025-07-07T09:22:37.949550Z",
+    "updatedAt": "2025-07-04T13:24:37.949550Z"
+  },
+  {
+    "id": "f0fabfbd-6515-48db-b58e-c82a17e86ae9",
+    "text": "Order a new pair of headphones",
+    "completed": false,
+    "createdAt": "2025-08-17T03:59:37.949550Z",
+    "updatedAt": "2025-07-03T08:12:37.949550Z"
+  },
+  {
+    "id": "1b2932de-1c84-4175-b527-e027cdcbc483",
+    "text": "Update app dependencies",
+    "completed": false,
+    "createdAt": "2025-06-26T09:43:37.949550Z",
+    "updatedAt": "2025-06-25T10:46:37.949550Z"
+  },
+  {
+    "id": "b95b2123-bc4d-441b-890d-7f58a296c96a",
+    "text": "Test the offline mode",
+    "completed": false,
+    "createdAt": "2025-07-05T08:40:37.949550Z",
+    "updatedAt": "2025-06-27T06:56:37.949550Z"
+  },
+  {
+    "id": "225c9876-a32e-4fb8-8e93-50b240feff2f",
+    "text": "Submit visa documents",
+    "completed": false,
+    "createdAt": "2025-08-03T06:49:37.949550Z",
+    "updatedAt": "2025-07-12T11:28:37.949550Z"
+  },
+  {
+    "id": "8cb9314d-443d-46aa-831c-b4248f050e46",
+    "text": "Connect with old colleagues",
+    "completed": false,
+    "createdAt": "2025-06-27T08:37:37.949550Z",
+    "updatedAt": "2025-07-28T05:23:37.949550Z"
+  },
+  {
+    "id": "9acf3df5-95b4-4ad0-975c-21b736f6267a",
+    "text": "Test optimistic UI update logic",
+    "completed": false,
+    "createdAt": "2025-07-05T08:18:37.949550Z",
+    "updatedAt": "2025-08-10T06:48:37.949550Z"
+  },
+  {
+    "id": "d0e26147-da22-4d5f-b91c-493abe27996a",
+    "text": "Refine product requirements",
+    "completed": false,
+    "createdAt": "2025-08-03T07:11:37.949550Z",
+    "updatedAt": "2025-08-04T11:44:37.949550Z"
+  },
+  {
+    "id": "96e4c2ff-db0b-4c82-9142-b86f86e3a831",
+    "text": "Write a blog post about Zustand",
+    "completed": false,
+    "createdAt": "2025-06-22T13:17:37.949550Z",
+    "updatedAt": "2025-07-21T11:48:37.949550Z"
+  },
+  {
+    "id": "b3721980-44b6-481b-97fb-7a2546b93511",
+    "text": "Buy birthday gift for friend",
+    "completed": true,
+    "createdAt": "2025-07-13T05:59:37.949550Z",
+    "updatedAt": "2025-07-23T08:10:37.949550Z"
+  },
+  {
+    "id": "eca07e53-fb28-40d4-8597-28f1578ef303",
+    "text": "Research budget airlines to Europe",
+    "completed": true,
+    "createdAt": "2025-08-13T04:45:37.949550Z",
+    "updatedAt": "2025-08-09T07:33:37.949550Z",
+    "isPending": true
+  },
+  {
+    "id": "471951c9-c41c-46ba-b9ce-ccc07f7fb92e",
+    "text": "Order a new pair of headphones",
+    "completed": true,
+    "createdAt": "2025-07-10T08:29:37.949550Z",
+    "updatedAt": "2025-07-01T07:24:37.949550Z"
+  },
+  {
+    "id": "25a9bc59-266d-4286-b2a1-fa13b20a05b6",
+    "text": "Test the offline mode",
+    "completed": true,
+    "createdAt": "2025-07-18T04:12:37.949550Z",
+    "updatedAt": "2025-07-03T08:08:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "923816b8-d492-4948-b3b6-0537dbc70f44",
+    "text": "Connect with old colleagues",
+    "completed": false,
+    "createdAt": "2025-07-23T05:00:37.949550Z",
+    "updatedAt": "2025-08-03T05:20:37.949550Z"
+  },
+  {
+    "id": "3f8750e7-a78f-4cc8-a3a8-1a974d83cf98",
+    "text": "Submit visa documents",
+    "completed": false,
+    "createdAt": "2025-08-20T11:15:37.949550Z",
+    "updatedAt": "2025-07-08T12:57:37.949550Z",
+    "isPending": true
+  },
+  {
+    "id": "eef0b76a-15b4-4a39-8f3a-59863932d1f1",
+    "text": "Prepare roadmap presentation",
+    "completed": true,
+    "createdAt": "2025-07-02T12:46:37.949550Z",
+    "updatedAt": "2025-08-06T08:00:37.949550Z"
+  },
+  {
+    "id": "1fc62ac6-0795-40f5-8512-c09588d8bc0e",
+    "text": "Check LinkedIn messages",
+    "completed": false,
+    "createdAt": "2025-07-07T06:43:37.949550Z",
+    "updatedAt": "2025-06-29T08:52:37.949550Z"
+  },
+  {
+    "id": "6313afdc-0036-4a60-8e23-ef679ffb494f",
+    "text": "Create end-to-end test cases",
+    "completed": true,
+    "createdAt": "2025-08-18T12:06:37.949550Z",
+    "updatedAt": "2025-07-11T04:22:37.949550Z"
+  },
+  {
+    "id": "f036543b-2853-4731-842f-48d773fc1163",
+    "text": "Finish reading React docs",
+    "completed": true,
+    "createdAt": "2025-07-13T07:00:37.949550Z",
+    "updatedAt": "2025-08-06T03:40:37.949550Z"
+  },
+  {
+    "id": "806714a0-196c-4f99-beb2-c20e58f2659d",
+    "text": "Test optimistic UI update logic",
+    "completed": true,
+    "createdAt": "2025-08-12T05:19:37.949550Z",
+    "updatedAt": "2025-06-29T04:07:37.949550Z"
+  },
+  {
+    "id": "b6a309d2-48a4-4744-94fe-9b05ab5f1921",
+    "text": "Prepare roadmap presentation",
+    "completed": true,
+    "createdAt": "2025-08-15T12:08:37.949550Z",
+    "updatedAt": "2025-07-02T10:04:37.949550Z"
+  },
+  {
+    "id": "86f34615-9b2f-4045-bd93-716037e74198",
+    "text": "Schedule project demo",
+    "completed": true,
+    "createdAt": "2025-07-26T07:13:37.949550Z",
+    "updatedAt": "2025-08-15T07:32:37.949550Z"
+  },
+  {
+    "id": "b7bce54d-a7bf-4ff2-867e-064ed78fe513",
+    "text": "Practice speaking German",
+    "completed": false,
+    "createdAt": "2025-08-18T12:46:37.949550Z",
+    "updatedAt": "2025-08-04T12:43:37.949550Z"
+  },
+  {
+    "id": "3834c09d-5883-4fe8-a367-6b8715f4bbc7",
+    "text": "Update app dependencies",
+    "completed": true,
+    "createdAt": "2025-08-20T03:43:37.949550Z",
+    "updatedAt": "2025-07-28T13:16:37.949550Z",
+    "isPending": true
+  },
+  {
+    "id": "651d72cf-56d5-4606-a09d-13e8cab8342a",
+    "text": "Clean the apartment",
+    "completed": true,
+    "createdAt": "2025-07-26T13:18:37.949550Z",
+    "updatedAt": "2025-07-02T07:39:37.949550Z"
+  },
+  {
+    "id": "78ae319f-b067-4682-ad49-ce9ecb68800e",
+    "text": "Create end-to-end test cases",
+    "completed": false,
+    "createdAt": "2025-07-16T09:59:37.949550Z",
+    "updatedAt": "2025-07-01T10:49:37.949550Z"
+  },
+  {
+    "id": "69228a96-154b-4787-ba59-90cc7a2fa4b2",
+    "text": "Update portfolio site",
+    "completed": true,
+    "createdAt": "2025-07-20T13:36:37.949550Z",
+    "updatedAt": "2025-08-08T08:41:37.949550Z"
+  },
+  {
+    "id": "d3bbde62-99a0-4361-bdf1-30be288b8921",
+    "text": "Research European work visa requirements",
+    "completed": false,
+    "createdAt": "2025-07-19T03:57:37.949550Z",
+    "updatedAt": "2025-08-20T05:43:37.949550Z"
+  },
+  {
+    "id": "143703ae-90d5-45c9-ae34-795f52ee217b",
+    "text": "Order a new pair of headphones",
+    "completed": false,
+    "createdAt": "2025-08-14T04:49:37.949550Z",
+    "updatedAt": "2025-08-14T05:28:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "35b11eb2-529d-4182-8c97-737522a0d7cb",
+    "text": "Backup personal files",
+    "completed": false,
+    "createdAt": "2025-07-20T07:03:37.949550Z",
+    "updatedAt": "2025-06-24T07:58:37.949550Z",
+    "isPending": true
+  },
+  {
+    "id": "8158888b-6834-4342-b257-a3fa1dad6b40",
+    "text": "Prepare roadmap presentation",
+    "completed": true,
+    "createdAt": "2025-06-22T05:05:37.949550Z",
+    "updatedAt": "2025-08-11T12:09:37.949550Z"
+  },
+  {
+    "id": "698adfb7-3077-42fb-8715-0320cb18ed67",
+    "text": "Research budget airlines to Europe",
+    "completed": false,
+    "createdAt": "2025-07-13T10:15:37.949550Z",
+    "updatedAt": "2025-07-18T05:31:37.949550Z"
+  },
+  {
+    "id": "70ac1bb0-e865-4732-b0e3-f45f4890497d",
+    "text": "Review code style guide",
+    "completed": true,
+    "createdAt": "2025-08-18T04:17:37.949550Z",
+    "updatedAt": "2025-06-24T12:46:37.949550Z"
+  },
+  {
+    "id": "9485e68e-2f73-4eae-81b3-ada7016e8ff5",
+    "text": "Call Sarah about project update",
+    "completed": false,
+    "createdAt": "2025-08-08T11:47:37.949550Z",
+    "updatedAt": "2025-08-15T11:31:37.949550Z"
+  },
+  {
+    "id": "6c5fa707-5041-42c5-ab48-ccede266bcf1",
+    "text": "Set up daily coding challenge",
+    "completed": true,
+    "createdAt": "2025-07-30T09:38:37.949550Z",
+    "updatedAt": "2025-08-16T06:10:37.949550Z"
+  },
+  {
+    "id": "6a74a487-f232-454d-805c-2f4348637183",
+    "text": "Book dentist appointment",
+    "completed": false,
+    "createdAt": "2025-07-05T10:54:37.949550Z",
+    "updatedAt": "2025-08-15T10:12:37.949550Z"
+  },
+  {
+    "id": "22dfa0ec-27dc-4a81-8ef9-1732587b579c",
+    "text": "Practice speaking German",
+    "completed": true,
+    "createdAt": "2025-07-17T08:01:37.949550Z",
+    "updatedAt": "2025-07-15T05:24:37.949550Z",
+    "isPending": false
+  },
+  {
+    "id": "83bd560d-09fc-4809-9f90-0ae3eaa16d4f",
+    "text": "Update software on laptop",
+    "completed": true,
+    "createdAt": "2025-08-12T09:45:37.949550Z",
+    "updatedAt": "2025-07-11T12:42:37.949550Z"
+  },
+  {
+    "id": "9ccfd4eb-8109-497b-8b6d-949c56ab28cc",
+    "text": "Check LinkedIn messages",
+    "completed": false,
+    "createdAt": "2025-07-15T06:52:37.949550Z",
+    "updatedAt": "2025-07-22T07:28:37.949550Z"
+  },
+  {
+    "id": "24508a15-de41-41fc-9e0f-cff7c5f14a84",
+    "text": "Finish reading React docs",
+    "completed": false,
+    "createdAt": "2025-07-13T04:38:37.949550Z",
+    "updatedAt": "2025-08-11T08:37:37.949550Z"
+  },
+  {
+    "id": "e60c23dc-6368-49ed-aada-05d8a9c042de",
+    "text": "Test the offline mode",
+    "completed": false,
+    "createdAt": "2025-07-07T13:16:37.949550Z",
+    "updatedAt": "2025-06-27T08:08:37.949550Z"
+  },
+  {
+    "id": "b29e957c-844a-47d2-a3dc-c48f7f1ff92a",
+    "text": "Create end-to-end test cases",
+    "completed": false,
+    "createdAt": "2025-08-18T09:03:37.949550Z",
+    "updatedAt": "2025-06-23T04:19:37.949550Z"
+  },
+  {
+    "id": "9b4d423f-128a-4a5e-a7c5-7953c3238359",
+    "text": "Complete Dutch grammar exercise",
+    "completed": true,
+    "createdAt": "2025-08-14T05:11:37.949550Z",
+    "updatedAt": "2025-07-02T06:34:37.949550Z"
+  },
+  {
+    "id": "e77a6644-53d8-4324-8b57-0ea2fab57067",
+    "text": "Buy birthday gift for friend",
+    "completed": true,
+    "createdAt": "2025-08-06T07:52:37.949550Z",
+    "updatedAt": "2025-07-11T09:07:37.949550Z"
+  },
+  {
+    "id": "020d680d-c78c-4baf-a205-d4df8550b2fc",
+    "text": "Review pull requests",
+    "completed": true,
+    "createdAt": "2025-08-08T09:32:37.949550Z",
+    "updatedAt": "2025-07-18T07:13:37.949550Z"
+  },
+  {
+    "id": "b35c46c3-4e64-4aa9-a68b-c11aa29dff66",
+    "text": "Draft new feature spec",
+    "completed": false,
+    "createdAt": "2025-07-23T10:13:37.949550Z",
+    "updatedAt": "2025-08-11T11:36:37.949550Z"
+  },
+  {
+    "id": "ff9b0a2e-34fe-4031-9e6e-db3f63c0a6fc",
+    "text": "Order a new pair of headphones",
+    "completed": false,
+    "createdAt": "2025-08-01T10:50:37.949550Z",
+    "updatedAt": "2025-06-29T03:55:37.949550Z"
+  },
+  {
+    "id": "8899688e-7e81-41fe-91bb-4bdeb8c3a66b",
+    "text": "Review code style guide",
+    "completed": false,
+    "createdAt": "2025-07-10T10:02:37.949550Z",
+    "updatedAt": "2025-07-15T05:09:37.949550Z"
+  },
+  {
+    "id": "14b4c78b-c656-4a67-8cb7-c48d2c59cd42",
+    "text": "Test deployment on CodeSandbox",
+    "completed": true,
+    "createdAt": "2025-08-04T10:51:37.949550Z",
+    "updatedAt": "2025-07-15T09:03:37.949550Z"
+  },
+  {
+    "id": "40b0a7de-2172-4975-964b-d4c5b5e27125",
+    "text": "Plan weekend trip",
+    "completed": false,
+    "createdAt": "2025-08-02T05:51:37.949550Z",
+    "updatedAt": "2025-08-14T08:57:37.949550Z"
+  },
+  {
+    "id": "93264d8b-fc78-4bfa-97de-d3048a389571",
+    "text": "Lookup Dutch language lessons online",
+    "completed": true,
+    "createdAt": "2025-07-10T04:56:37.949550Z",
+    "updatedAt": "2025-07-01T07:51:37.949550Z"
+  },
+  {
+    "id": "3cf78d6a-bbf5-45c9-87a5-065add0244e8",
+    "text": "Schedule project demo",
+    "completed": false,
+    "createdAt": "2025-07-19T09:21:37.949550Z",
+    "updatedAt": "2025-07-24T10:56:37.949550Z"
+  },
+  {
+    "id": "21e75979-ef94-441f-8f7a-90cc3fd579c6",
+    "text": "Register new domain for app",
+    "completed": true,
+    "createdAt": "2025-07-19T04:58:37.949550Z",
+    "updatedAt": "2025-06-24T08:43:37.949550Z"
+  },
+  {
+    "id": "efe770ae-7bf0-4ca4-8e40-08340733ca09",
+    "text": "Prepare monthly expenses spreadsheet",
+    "completed": true,
+    "createdAt": "2025-06-25T07:47:37.949550Z",
+    "updatedAt": "2025-07-11T06:52:37.949550Z"
+  },
+  {
+    "id": "ad9397a2-d09b-42da-a251-eebfbe73d64b",
+    "text": "Prepare roadmap presentation",
+    "completed": false,
+    "createdAt": "2025-07-23T04:31:37.949550Z",
+    "updatedAt": "2025-06-30T10:47:37.949550Z"
+  },
+  {
+    "id": "5c7525ad-8ff0-4c70-b181-5504e1ba8000",
+    "text": "Practice speaking German",
+    "completed": false,
+    "createdAt": "2025-07-29T12:06:37.949550Z",
+    "updatedAt": "2025-08-19T07:25:37.949550Z"
+  },
+  {
+    "id": "4a345634-9b23-4334-a5ad-3a0edb40994f",
+    "text": "Register new domain for app",
+    "completed": false,
+    "createdAt": "2025-07-08T11:04:37.949550Z",
+    "updatedAt": "2025-06-24T12:59:37.949550Z"
+  },
+  {
+    "id": "ebd099c4-b524-4b11-818e-4d00df8e04d2",
+    "text": "Connect with old colleagues",
+    "completed": false,
+    "createdAt": "2025-08-12T05:07:37.949550Z",
+    "updatedAt": "2025-06-22T07:37:37.949550Z"
+  },
+  {
+    "id": "7cf5afe3-4cf3-4444-b822-61db44146e13",
+    "text": "Backup personal files",
+    "completed": true,
+    "createdAt": "2025-07-04T07:57:37.949550Z",
+    "updatedAt": "2025-08-13T09:36:37.949550Z"
+  },
+  {
+    "id": "d82e55fb-1853-4797-8f9c-4a33e1f909df",
+    "text": "Clean the apartment",
+    "completed": false,
+    "createdAt": "2025-07-03T12:17:37.949550Z",
+    "updatedAt": "2025-06-24T12:48:37.949550Z"
+  },
+  {
+    "id": "c58b5414-2e98-4d30-8702-7a691843c11d",
+    "text": "Finish reading React docs",
+    "completed": false,
+    "createdAt": "2025-07-01T10:34:37.949550Z",
+    "updatedAt": "2025-08-13T12:06:37.949550Z"
+  },
+  {
+    "id": "eaf3c3ab-2e65-4ac9-874a-77c2bfb10c76",
+    "text": "Pay utility bills",
+    "completed": false,
+    "createdAt": "2025-07-18T07:00:37.949550Z",
+    "updatedAt": "2025-07-24T10:16:37.949550Z"
+  },
+  {
+    "id": "32600da7-bab2-4fae-aaac-c2aba3c706cd",
+    "text": "Pay utility bills",
+    "completed": false,
+    "createdAt": "2025-07-13T11:30:37.949550Z",
+    "updatedAt": "2025-07-03T13:31:37.949550Z",
+    "isPending": true
+  },
+  {
+    "id": "f21e9c47-f8af-4a09-99fd-9f0a774bb484",
+    "text": "Refactor old codebase",
+    "completed": false,
+    "createdAt": "2025-07-29T04:29:37.949550Z",
+    "updatedAt": "2025-08-01T03:51:37.949550Z"
+  },
+  {
+    "id": "2687ddb6-ee15-4c45-90eb-7ecc072f0e85",
+    "text": "Study clean architecture principles",
+    "completed": true,
+    "createdAt": "2025-07-25T08:46:37.949550Z",
+    "updatedAt": "2025-08-12T07:12:37.949550Z"
+  },
+  {
+    "id": "a03416ce-36da-49ac-bc4c-9a420f608219",
+    "text": "Water the indoor plants",
+    "completed": false,
+    "createdAt": "2025-06-28T10:26:37.949550Z",
+    "updatedAt": "2025-07-30T03:58:37.949550Z"
+  },
+  {
+    "id": "876d6182-b352-487e-8238-06716139797f",
+    "text": "Write unit tests for todo reducer",
+    "completed": true,
+    "createdAt": "2025-06-28T05:26:37.949550Z",
+    "updatedAt": "2025-06-27T04:02:37.949550Z"
+  },
+  {
+    "id": "e0676840-c28e-439c-80be-3e334a9e2995",
+    "text": "Research budget airlines to Europe",
+    "completed": true,
+    "createdAt": "2025-08-18T11:13:37.949550Z",
+    "updatedAt": "2025-08-11T12:14:37.949550Z"
+  },
+  {
+    "id": "70645389-0423-4af5-82bf-2136a82eba2b",
+    "text": "Submit visa documents",
+    "completed": false,
+    "createdAt": "2025-07-07T08:23:37.949550Z",
+    "updatedAt": "2025-07-25T07:59:37.949550Z"
+  },
+  {
+    "id": "9f5d0a61-0e4d-451b-8ab6-6608a32a9444",
+    "text": "Research European work visa requirements",
+    "completed": true,
+    "createdAt": "2025-07-04T10:16:37.949550Z",
+    "updatedAt": "2025-08-03T09:57:37.949550Z"
+  },
+  {
+    "id": "14f2f824-6fe0-4a51-b853-e36c9f8eca51",
+    "text": "Schedule project demo",
+    "completed": false,
+    "createdAt": "2025-07-08T11:11:37.949550Z",
+    "updatedAt": "2025-08-21T10:29:37.949550Z"
+  },
+  {
+    "id": "8ee8b8f3-01b7-4106-a50f-a8b5adff7429",
+    "text": "Create end-to-end test cases",
+    "completed": false,
+    "createdAt": "2025-06-29T07:27:37.949550Z",
+    "updatedAt": "2025-08-07T10:18:37.949550Z"
+  },
+  {
+    "id": "40f35c58-57e8-4f1d-af6d-82b24d98cc22",
+    "text": "Test deployment on CodeSandbox",
+    "completed": false,
+    "createdAt": "2025-07-14T12:29:37.949550Z",
+    "updatedAt": "2025-07-03T13:28:37.949550Z"
+  },
+  {
+    "id": "5b2f410e-bf84-4b87-be91-b4e865b8de14",
+    "text": "Finish novel",
+    "completed": true,
+    "createdAt": "2025-08-07T03:41:37.949550Z",
+    "updatedAt": "2025-07-19T09:45:37.949550Z"
+  },
+  {
+    "id": "46abd8d9-1e15-48e1-955f-cc2a14736d92",
+    "text": "Update portfolio site",
+    "completed": false,
+    "createdAt": "2025-07-05T10:50:37.949550Z",
+    "updatedAt": "2025-07-19T10:15:37.949550Z"
+  },
+  {
+    "id": "64ce55fc-a047-42b5-931c-727c40305d7a",
+    "text": "Finish novel",
+    "completed": true,
+    "createdAt": "2025-07-21T13:40:37.949550Z",
+    "updatedAt": "2025-07-27T09:10:37.949550Z"
+  },
+  {
+    "id": "f04cd9c0-ab08-47d4-9c26-4d37b5266490",
+    "text": "Prepare for job interview",
+    "completed": false,
+    "createdAt": "2025-07-02T12:53:37.949550Z",
+    "updatedAt": "2025-08-06T03:44:37.949550Z"
+  }
+]

@@ -18,6 +18,7 @@ export const TodoForm = memo(function TodoForm() {
   } = useTodoForm({ mode: "onChange" });
 
   const {
+    isDemoMode,
     todos,
     addTodo,
     error,
@@ -35,13 +36,13 @@ export const TodoForm = memo(function TodoForm() {
   const onSubmit = useCallback(
     async (data: { text: string }) => {
       try {
-        await addTodo(data.text);
+        await addTodo(data.text, isDemoMode);
         reset(undefined, { keepErrors: false });
       } catch {
         // Error is handled by the store
       }
     },
-    [addTodo, reset]
+    [addTodo, reset, isDemoMode]
   );
 
   const handleClearError = useCallback(() => {
@@ -50,7 +51,7 @@ export const TodoForm = memo(function TodoForm() {
   }, [clearServerError, clearErrors]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 w-full">
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
         <div className="flex gap-2">
           <Input

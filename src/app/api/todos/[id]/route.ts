@@ -8,6 +8,8 @@ export async function PATCH(
 ) {
   try {
     const { id } = await params;
+    const { searchParams } = new URL(request.url);
+    const isDemo = searchParams.get('demo') === 'true';
     const updates = await request.json();
 
     if (!updates || Object.keys(updates).length === 0) {
@@ -17,7 +19,7 @@ export async function PATCH(
       );
     }
 
-    const todo = await updateTodo(id, updates);
+    const todo = await updateTodo(id, updates, isDemo);
     return NextResponse.json({ todo });
   } catch {
     return NextResponse.json(
@@ -33,7 +35,10 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params;
-    await deleteTodo(id);
+    const { searchParams } = new URL(request.url);
+    const isDemo = searchParams.get('demo') === 'true';
+    
+    await deleteTodo(id, isDemo);
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json(

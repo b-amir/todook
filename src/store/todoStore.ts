@@ -6,13 +6,20 @@ interface TodoState {
   todos: Todo[];
   error: string | null;
   isLoading: boolean;
+  isDemoMode: boolean;
 }
 
 interface TodoActions {
   loadTodos: () => Promise<void>;
-  addTodo: (text: string) => Promise<void>;
-  updateTodo: (id: string, updates: UpdateTodoRequest) => Promise<void>;
-  deleteTodo: (id: string) => Promise<void>;
+  addTodo: (text: string, isDemo?: boolean) => Promise<void>;
+  updateTodo: (
+    id: string,
+    updates: UpdateTodoRequest,
+    isDemo?: boolean
+  ) => Promise<void>;
+  deleteTodo: (id: string, isDemo?: boolean) => Promise<void>;
+  deleteAllTodos: (isDemo?: boolean) => Promise<void>;
+  setDemoMode: (isDemo: boolean) => void;
   clearError: () => void;
 }
 
@@ -21,11 +28,18 @@ export const useTodoStore = create<TodoState & TodoActions>()(
     todos: [],
     error: null,
     isLoading: false,
+    isDemoMode: false,
+
+    setDemoMode: (isDemo: boolean) => {
+      set({ isDemoMode: isDemo });
+      get().loadTodos();
+    },
 
     loadTodos: async () => {
+      const { isDemoMode } = get();
       set({ isLoading: true });
       try {
-        const response = await fetch("/api/todos");
+        const response = await fetch(`/api/todos?demo=${isDemoMode}`);
         const { todos } = await response.json();
         set({ todos, error: null });
       } catch {
@@ -35,7 +49,7 @@ export const useTodoStore = create<TodoState & TodoActions>()(
       }
     },
 
-    addTodo: async (text: string) => {
+    addTodo: async (text: string, isDemo = false) => {
       const tempId = `temp-${Date.now()}`;
       const optimisticTodo: Todo = {
         id: tempId,
@@ -55,7 +69,7 @@ export const useTodoStore = create<TodoState & TodoActions>()(
         const response = await fetch("/api/todos", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text }),
+          body: JSON.stringify({ text, isDemo }),
         });
 
         if (!response.ok) throw new Error("Failed to create todo");
@@ -75,7 +89,11 @@ export const useTodoStore = create<TodoState & TodoActions>()(
       }
     },
 
-    updateTodo: async (id: string, updates: UpdateTodoRequest) => {
+    updateTodo: async (
+      id: string,
+      updates: UpdateTodoRequest,
+      isDemo = false
+    ) => {
       const originalTodos = get().todos;
 
       set((state) => ({
@@ -86,7 +104,7 @@ export const useTodoStore = create<TodoState & TodoActions>()(
       }));
 
       try {
-        const response = await fetch(`/api/todos/${id}`, {
+        const response = await fetch(`/api/todos/${id}?demo=${isDemo}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(updates),
@@ -109,7 +127,7 @@ export const useTodoStore = create<TodoState & TodoActions>()(
       }
     },
 
-    deleteTodo: async (id: string) => {
+    deleteTodo: async (id: string, isDemo = false) => {
       const originalTodos = get().todos;
 
       set((state) => ({
@@ -120,7 +138,7 @@ export const useTodoStore = create<TodoState & TodoActions>()(
       }));
 
       try {
-        const response = await fetch(`/api/todos/${id}`, {
+        const response = await fetch(`/api/todos/${id}?demo=${isDemo}`, {
           method: "DELETE",
         });
 
@@ -133,6 +151,25 @@ export const useTodoStore = create<TodoState & TodoActions>()(
         set({
           todos: originalTodos,
           error: "Failed to delete todo. Please try again.",
+        });
+      }
+    },
+
+    deleteAllTodos: async (isDemo = false) => {
+      const originalTodos = get().todos;
+      set(() => ({
+        todos: [],
+        error: null,
+      }));
+      try {
+        const response = await fetch(`/api/todos?demo=${isDemo}`, {
+          method: "DELETE",
+        });
+        if (!response.ok) throw new Error("Failed to delete all todos");
+      } catch {
+        set({
+          todos: originalTodos,
+          error: "Failed to delete all todos. Please try again.",
         });
       }
     },

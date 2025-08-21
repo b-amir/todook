@@ -13,7 +13,7 @@ export const TodoListLoading = React.memo(function TodoListLoading() {
         <LoadingSpinner size="lg" className="!text-brgray-100 w-12 h-12" />
       </div>
       <p className="text-lg font-medium mb-2">Loading todos...</p>
-      <p className="text-sm text-brgray-100 italic font-light">
+      <p className="text-sm text-brgray-100 font-normal">
         Please wait while we fetch your todos
       </p>
     </div>

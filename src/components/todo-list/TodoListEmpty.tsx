@@ -17,7 +17,7 @@ export const TodoListEmpty = React.memo(function TodoListEmpty() {
         />
       </div>
       <p className="text-lg font-medium mb-2">No todos yet</p>
-      <p className="text-sm text-brgray-100 italic font-light">
+      <p className="text-sm text-brgray-100 font-normal">
         Add your first todo above to get started!
       </p>
     </div>

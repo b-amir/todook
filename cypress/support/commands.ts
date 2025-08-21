@@ -122,3 +122,16 @@ Cypress.Commands.add("assertAddButtonDisabled", () => {
 Cypress.Commands.add("assertAddButtonEnabled", () => {
   cy.get("button").contains("Add").should("not.be.disabled");
 });
+
+Cypress.Commands.add(
+  "waitForStableElement",
+  (selector: string, timeout = 10000) => {
+    cy.get(selector, { timeout })
+      .should("be.visible")
+      .should("not.be.disabled")
+      .then(($el) => {
+        cy.wait(100);
+        return $el;
+      });
+  }
+);

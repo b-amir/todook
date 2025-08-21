@@ -23,35 +23,78 @@ export const setupSlowCreateTodo = () => {
 };
 
 export const setupStandardAPI = () => {
-  cy.intercept("GET", "/api/todos", { fixture: "todos.json" }).as("getTodos");
+  let todos = [
+    {
+      id: "1",
+      text: "Editable todo",
+      completed: false,
+      createdAt: "2025-10-27T10:00:00.000Z",
+      updatedAt: "2025-10-27T10:00:00.000Z",
+    },
+    {
+      id: "2",
+      text: "Original todo",
+      completed: true,
+      createdAt: "2025-10-26T10:00:00.000Z",
+      updatedAt: "2025-10-26T10:00:00.000Z",
+    },
+    {
+      id: "3",
+      text: "Another todo",
+      completed: false,
+      createdAt: "2025-10-25T10:00:00.000Z",
+      updatedAt: "2025-10-25T10:00:00.000Z",
+    },
+  ];
+
+  cy.intercept("GET", "/api/todos", { todos }).as("getTodos");
+
   cy.intercept("POST", "/api/todos", (req) => {
-    req.reply({
+    const todoId = `new-${Date.now()}`;
+    const newTodo = {
+      id: todoId,
+      text: req.body.text,
+      completed: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+
+    todos = [newTodo, ...todos];
+
+    const response = {
       statusCode: 201,
-      body: {
-        todo: {
-          id: `new-${Date.now()}`,
-          text: req.body.text,
-          completed: false,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
-        },
-      },
-    });
+      body: { todo: newTodo },
+    };
+    req.reply(response);
   }).as("createTodo");
+
   cy.intercept("PATCH", "/api/todos/*", (req) => {
+    const todoId = req.url.split("/").pop();
+    const updates = req.body;
+
+    todos = todos.map((todo) =>
+      todo.id === todoId
+        ? { ...todo, ...updates, updatedAt: new Date().toISOString() }
+        : todo
+    );
+
     req.reply({
       statusCode: 200,
       body: {
-        todo: {
-          id: req.url.split("/").pop(),
-          ...req.body,
-        },
+        todo: todos.find((todo) => todo.id === todoId),
       },
     });
   }).as("updateTodo");
-  cy.intercept("DELETE", "/api/todos/*", {
-    statusCode: 200,
-    body: { success: true },
+
+  cy.intercept("DELETE", "/api/todos/*", (req) => {
+    const todoId = req.url.split("/").pop();
+
+    todos = todos.filter((todo) => todo.id !== todoId);
+
+    req.reply({
+      statusCode: 200,
+      body: { success: true },
+    });
   }).as("deleteTodo");
 
   cy.visit("/");
@@ -121,17 +164,30 @@ export const testLoadingStates = () => {
 
 export const testCompleteTodoWorkflow = () => {
   const todoText = "Complete workflow todo";
+  const updatedTodoText = "Updated workflow todo";
 
-  cy.get('[data-testid="todo-input"]').clear().type(todoText);
-  cy.get('[data-testid="add-todo-button"]').should("be.visible").click();
-  cy.wait("@createTodo");
+  // Step 1: Create a new todo
+  cy.get('[role="listitem"]').then(($initialItems) => {
+    const initialCount = $initialItems.length;
+
+    cy.get('[data-testid="todo-input"]').clear().type(todoText);
+    cy.get('[data-testid="add-todo-button"]').should("be.visible").click();
+    cy.wait("@createTodo");
+    cy.get('[role="listitem"]').should("have.length", initialCount + 1);
+  });
 
   cy.get('[data-testid="todo-list"]').should("be.visible");
-  cy.contains(todoText).should("be.visible");
 
+  // Step 2: Verify the todo was created
+  cy.contains(todoText, { timeout: 10000 }).should("be.visible");
+  cy.wait(500);
+  cy.contains(todoText).closest('[role="listitem"]').should("be.visible");
+
+  // Step 3: Mark the todo as completed
   cy.contains(todoText)
     .closest('[role="listitem"]')
     .find('[data-testid="todo-checkbox"]')
+    .should("be.visible")
     .click();
   cy.wait("@updateTodo");
   cy.contains(todoText)
@@ -139,20 +195,25 @@ export const testCompleteTodoWorkflow = () => {
     .find("span")
     .should("have.class", "line-through");
 
+  // Step 4: Edit the todo
   cy.contains(todoText)
     .closest('[role="listitem"]')
     .find('[data-testid="edit-todo-button"]')
     .should("be.visible")
+    .should("not.be.disabled")
     .click();
-  cy.get('[data-testid="edit-input"]').clear().type("Updated workflow todo");
-  cy.get('[data-testid="save-edit-button"]').click();
+  cy.get('[data-testid="edit-input"]').clear().type(updatedTodoText);
+  cy.get('[data-testid="save-edit-button"]').should("be.visible").click();
   cy.wait("@updateTodo");
-  cy.contains("Updated workflow todo").should("be.visible");
+  cy.contains(updatedTodoText).should("be.visible");
 
-  cy.contains("Updated workflow todo")
+  // Step 5: Delete the updated todo
+  cy.contains(updatedTodoText)
     .closest('[role="listitem"]')
     .find('[data-testid="delete-todo-button"]')
+    .should("be.visible")
+    .should("not.be.disabled")
     .click();
   cy.wait("@deleteTodo");
-  cy.contains("Updated workflow todo").should("not.exist");
+  cy.contains(updatedTodoText).should("not.exist");
 };

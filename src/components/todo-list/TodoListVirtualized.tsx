@@ -47,7 +47,7 @@ export const TodoListVirtualized = React.memo(function TodoListVirtualized({
   );
 
   return (
-    <div className={containerClassName}>
+    <div className={containerClassName} data-testid="todo-list">
       <AutoSizer>
         {({ height, width }) => (
           <List

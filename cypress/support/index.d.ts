@@ -15,5 +15,9 @@ declare namespace Cypress {
     clickAddButton(): Chainable<void>;
     assertAddButtonDisabled(): Chainable<void>;
     assertAddButtonEnabled(): Chainable<void>;
+    waitForStableElement(
+      selector: string,
+      timeout?: number
+    ): Chainable<JQuery<HTMLElement>>;
   }
 }

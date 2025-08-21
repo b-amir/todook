@@ -35,8 +35,6 @@ export const metadata: Metadata = {
     description:
       "Fast, reliable, and simple task management app. Organize your todos with ease.",
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#f05069",
   icons: {
     icon: [
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
@@ -44,6 +42,11 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

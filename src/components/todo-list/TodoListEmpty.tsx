@@ -4,7 +4,7 @@ import { FaGhost } from "react-icons/fa6";
 export const TodoListEmpty = React.memo(function TodoListEmpty() {
   return (
     <div
-      className="flex flex-col items-center justify-center h-full text-brgray-300"
+      className="flex flex-col items-center justify-center flex-1 text-brgray-300"
       role="status"
       aria-live="polite"
       data-testid="todo-list-empty"

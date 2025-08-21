@@ -40,14 +40,8 @@ export const TodoListVirtualized = React.memo(function TodoListVirtualized({
     skeletonDelay,
   });
 
-  const containerClassName = useMemo(
-    () =>
-      `h-[60vh] min-h-[400px] ${scrollbarClass} bg-brgray-50/20 border shadow-inner border-brgray-50 py-4 px-1 rounded-lg`,
-    [scrollbarClass]
-  );
-
   return (
-    <div className={containerClassName} data-testid="todo-list">
+    <>
       <AutoSizer>
         {({ height, width }) => (
           <List
@@ -70,6 +64,6 @@ export const TodoListVirtualized = React.memo(function TodoListVirtualized({
           {stableTodos.length} todo{stableTodos.length === 1 ? "" : "s"}
         </div>
       )}
-    </div>
+    </>
   );
 });

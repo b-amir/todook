@@ -24,22 +24,28 @@ export const TodoList = memo(function TodoList() {
 
   useAutoScrollToTop(stableTodos, listRef);
 
-  if (isLoading) {
-    return <TodoListLoading />;
-  }
-
-  if (stableTodos.length === 0) {
-    return <TodoListEmpty />;
-  }
+  const containerClassName = useMemo(
+    () =>
+      `h-[60vh] min-h-[400px] ${TODO_LIST_CONSTANTS.SCROLLBAR_CLASS} bg-brgray-50/20 border shadow-inner border-brgray-50 py-4 px-1 rounded-lg`,
+    []
+  );
 
   return (
-    <TodoListVirtualized
-      todos={stableTodos}
-      listRef={listRef}
-      scrollbarClass={TODO_LIST_CONSTANTS.SCROLLBAR_CLASS}
-      showSkeletons={isScrollingFast}
-      skeletonDelay={TODO_LIST_CONSTANTS.SKELETON_DELAY}
-      onScroll={handleScroll}
-    />
+    <div className={containerClassName} data-testid="todo-list">
+      {isLoading ? (
+        <TodoListLoading />
+      ) : stableTodos.length === 0 ? (
+        <TodoListEmpty />
+      ) : (
+        <TodoListVirtualized
+          todos={stableTodos}
+          listRef={listRef}
+          scrollbarClass={TODO_LIST_CONSTANTS.SCROLLBAR_CLASS}
+          showSkeletons={isScrollingFast}
+          skeletonDelay={TODO_LIST_CONSTANTS.SKELETON_DELAY}
+          onScroll={handleScroll}
+        />
+      )}
+    </div>
   );
 });

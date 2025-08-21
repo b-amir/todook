@@ -119,7 +119,7 @@ describe("TodoForm", () => {
 
     render(<TodoForm />);
 
-    const clearButton = screen.getByRole("button", { name: "×" });
+    const clearButton = screen.getByTestId("dismiss-error-button");
     await user.click(clearButton);
 
     expect(mockClearError).toHaveBeenCalled();
@@ -134,5 +134,21 @@ describe("TodoForm", () => {
     await user.type(input, "New todo{enter}");
 
     expect(mockAddTodo).toHaveBeenCalledWith("New todo");
+  });
+
+  test("prevents todo with only special characters", async () => {
+    const user = userEvent.setup();
+    render(<TodoForm />);
+
+    const input = screen.getByPlaceholderText(/add a new todo/i);
+    const button = screen.getByRole("button", { name: /add/i });
+
+    await user.type(input, "!!!@@@###");
+    await user.click(button);
+
+    expect(mockAddTodo).not.toHaveBeenCalled();
+    expect(
+      screen.getByText(/can't be filled with only special characters/i)
+    ).toBeInTheDocument();
   });
 });

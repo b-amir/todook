@@ -39,7 +39,13 @@ export const todoSchema = z.object({
     .refine(
       (text) => text.length >= 3,
       "Todo must be at least 3 characters long after trimming"
-    ),
+    )
+    .refine((text) => {
+      const hasAlphanumeric = /[a-zA-Z0-9]/.test(text);
+      const hasSpecialChars = /[^a-zA-Z0-9\s]/.test(text);
+
+      return !hasSpecialChars || hasAlphanumeric;
+    }, "Todo can't be filled with only special characters"),
 });
 
 export type TodoFormData = z.infer<typeof todoSchema>;

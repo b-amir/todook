@@ -23,10 +23,7 @@
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
-    "db:seed-demo": "tsx scripts/database-setup.ts",
-    "db:setup-demo": "tsx scripts/database-setup.ts",
-    "db:init-demo": "tsx scripts/database-setup.ts",
-    "db:setup-all": "tsx scripts/database-setup.ts"
+    "db:setup": "tsx scripts/database-setup.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

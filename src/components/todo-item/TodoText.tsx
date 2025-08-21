@@ -2,12 +2,13 @@ import React, { memo } from "react";
 import clsx from "clsx";
 import { Input } from "@/components/Input";
 import type { Todo } from "@/types/todo";
+import type { UseFormRegister, FieldErrors } from "react-hook-form";
 
 interface TodoTextProps {
   todo: Todo;
   isEditing: boolean;
-  editText: string;
-  onTextChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  register: UseFormRegister<{ text: string }>;
+  errors: FieldErrors<{ text: string }>;
   onKeyDown: (e: React.KeyboardEvent) => void;
   onToggle: () => void;
 }
@@ -15,22 +16,35 @@ interface TodoTextProps {
 export const TodoText = memo(function TodoText({
   todo,
   isEditing,
-  editText,
-  onTextChange,
+  register,
+  errors,
   onKeyDown,
   onToggle,
 }: TodoTextProps) {
   if (isEditing) {
     return (
-      <Input
-        data-testid="edit-input"
-        value={editText}
-        onChange={onTextChange}
-        onKeyDown={onKeyDown}
-        autoFocus
-        variant="minimal"
-        className="flex-1"
-      />
+      <div className="flex-1">
+        <Input
+          {...register("text")}
+          data-testid="edit-input"
+          onKeyDown={onKeyDown}
+          autoFocus
+          variant="minimal"
+          className={`flex-1 ${
+            errors.text
+              ? "border-brpink-300 focus:border-brpink-500 focus:shadow-[0_0_0_2px_rgba(236,72,153,0.5)]"
+              : ""
+          }`}
+          aria-invalid={!!errors.text}
+        />
+        {errors.text && (
+          <div className="mt-1">
+            <span className="text-brpink-500 text-xs">
+              {errors.text.message}
+            </span>
+          </div>
+        )}
+      </div>
     );
   }
 

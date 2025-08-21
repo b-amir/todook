@@ -1,51 +1,69 @@
 "use client";
 
-import React, { useState, memo } from "react";
+import React, { useState, memo, useCallback } from "react";
 import clsx from "clsx";
 import { useTodoStore } from "@/store/todoStore";
 import type { Todo } from "@/types/todo";
+import { useTodoForm } from "@/hooks/useTodoForm";
 import { TodoCheckbox } from "@/components/todo-item/TodoCheckbox";
 import { TodoText } from "@/components/todo-item/TodoText";
 import { TodoActions } from "@/components/todo-item/TodoActions";
 
 export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [editText, setEditText] = useState(todo.text);
   const { updateTodo, deleteTodo } = useTodoStore();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+    reset,
+  } = useTodoForm({ defaultText: todo.text, mode: "onBlur" });
+
+  const hasValidText = isValid;
 
   const handleToggleComplete = () => {
     updateTodo(todo.id, { completed: !todo.completed });
   };
 
-  const handleEdit = () => {
+  const handleEdit = useCallback(() => {
     setIsEditing(true);
-    setEditText(todo.text);
-  };
+    reset({ text: todo.text });
+  }, [reset, todo.text]);
 
-  const handleSaveEdit = () => {
-    if (editText.trim() !== todo.text) {
-      updateTodo(todo.id, { text: editText.trim() });
-    }
+  const handleSaveEdit = useCallback(
+    async (data: { text: string }) => {
+      try {
+        if (data.text !== todo.text) {
+          await updateTodo(todo.id, { text: data.text });
+        }
+        setIsEditing(false);
+      } catch (error) {
+        console.error("Failed to update todo:", error);
+      }
+    },
+    [updateTodo, todo.id, todo.text]
+  );
+
+  const handleCancelEdit = useCallback(() => {
+    reset({ text: todo.text });
     setIsEditing(false);
-  };
+  }, [reset, todo.text]);
 
-  const handleCancelEdit = () => {
-    setEditText(todo.text);
-    setIsEditing(false);
-  };
-
-  const handleDelete = () => {
+  const handleDelete = useCallback(() => {
     deleteTodo(todo.id);
-  };
+  }, [deleteTodo, todo.id]);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") handleSaveEdit();
-    if (e.key === "Escape") handleCancelEdit();
-  };
-
-  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEditText(e.target.value);
-  };
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        handleSubmit(handleSaveEdit)();
+      }
+      if (e.key === "Escape") handleCancelEdit();
+    },
+    [handleSubmit, handleSaveEdit, handleCancelEdit]
+  );
 
   return (
     <li
@@ -69,8 +87,8 @@ export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
         <TodoText
           todo={todo}
           isEditing={isEditing}
-          editText={editText}
-          onTextChange={handleTextChange}
+          register={register}
+          errors={errors}
           onKeyDown={handleKeyDown}
           onToggle={handleToggleComplete}
         />
@@ -79,8 +97,9 @@ export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
       <TodoActions
         todo={todo}
         isEditing={isEditing}
+        hasValidText={hasValidText}
         onEdit={handleEdit}
-        onSave={handleSaveEdit}
+        onSave={handleSubmit(handleSaveEdit)}
         onCancel={handleCancelEdit}
         onDelete={handleDelete}
       />

@@ -6,6 +6,7 @@ import type { Todo } from "@/types/todo";
 interface TodoActionsProps {
   todo: Todo;
   isEditing: boolean;
+  hasValidText: boolean;
   onEdit: () => void;
   onSave: () => void;
   onCancel: () => void;
@@ -15,6 +16,7 @@ interface TodoActionsProps {
 export const TodoActions = memo(function TodoActions({
   todo,
   isEditing,
+  hasValidText,
   onEdit,
   onSave,
   onCancel,
@@ -34,8 +36,14 @@ export const TodoActions = memo(function TodoActions({
           </button>
           <button
             onClick={onSave}
+            disabled={!hasValidText}
             aria-label="Save changes"
-            className="p-1.5 text-gray-400 hover:text-brgreen-500 transition-colors rounded"
+            className={clsx(
+              "p-1.5 transition-colors rounded",
+              !hasValidText
+                ? "text-gray-300 cursor-not-allowed"
+                : "text-gray-400 hover:text-brgreen-500"
+            )}
             data-testid="save-edit-button"
           >
             <MdCheck size={16} />

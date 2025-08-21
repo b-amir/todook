@@ -9,6 +9,7 @@ interface UseTodoItemOptions {
 
 export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const { isDemoMode, updateTodo, deleteTodo } = useTodoStore();
 
   const {
@@ -46,9 +47,18 @@ export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
     setIsEditing(false);
   }, [reset, todo.text]);
 
-  const handleDelete = useCallback(() => {
+  const handleDeleteClick = useCallback(() => {
+    setShowDeleteDialog(true);
+  }, []);
+
+  const handleDeleteConfirm = useCallback(() => {
     deleteTodo(todo.id, isDemoMode);
+    setShowDeleteDialog(false);
   }, [deleteTodo, todo.id, isDemoMode]);
+
+  const handleDeleteCancel = useCallback(() => {
+    setShowDeleteDialog(false);
+  }, []);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -71,7 +81,10 @@ export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
     handleEdit,
     handleSaveEdit,
     handleCancelEdit,
-    handleDelete,
+    handleDeleteClick,
+    handleDeleteConfirm,
+    handleDeleteCancel,
+    showDeleteDialog,
     handleKeyDown,
   };
 };

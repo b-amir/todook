@@ -2,7 +2,7 @@ import { TodoForm } from "@/components/todo-form/TodoForm";
 import { TodoList } from "@/components/todo-list/TodoList";
 import { ErrorBoundary } from "@/components/common/ErrorBoundary";
 import { Logo } from "@/components/ui/Logo";
-import { ControlBox } from "@/components/ui/ControlBox";
+import { ControlBox } from "@/components/control-box/ControlBox";
 
 export default function HomePage() {
   return (

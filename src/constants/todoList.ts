@@ -1,8 +1,8 @@
-// TodoList virtualization constants
+// TodoList constants
 export const TODO_LIST_CONSTANTS = {
   // Height calculations
   BASE_TODO_ITEM_HEIGHT: 52, // py-2 (16px) + min-h-[24px] (24px) + gap-3 (12px)
-  CONTAINER_BOTTOM_PADDING: 12, // pb-3 = 12px
+  CONTAINER_BOTTOM_PADDING: 8, // pb-2 = 8px
   TEXT_WRAP_LINE_HEIGHT: 20, // Additional height per text line
   TEXT_CHARS_PER_LINE: 50, // Characters per line for text wrapping estimation
 
@@ -19,6 +19,17 @@ export const TODO_LIST_CONSTANTS = {
 
   // List configuration
   OVERSCAN_COUNT: 5, // Number of items to render outside viewport
-  CONTAINER_HEIGHT: "60vh", // Virtual list container height
-  MIN_CONTAINER_HEIGHT: "400px", // Minimum container height
+
+  // Performance optimizations
+  MAX_VISIBLE_ITEMS: 20, // Maximum items to render at once
+  SCROLL_VELOCITY_THRESHOLD: 1.5, // Pixels per millisecond for fast scrolling
+  SKELETON_DELAY: 100, // Delay before showing skeletons during fast scroll
+  HEIGHT_CACHE_SIZE: 100, // Maximum number of cached heights to store
+
+  // UI configuration
+  SCROLLBAR_CLASS: "custom-scrollbar",
+  FAST_SCROLLING_CONFIG: {
+    velocityThreshold: 1.5,
+    hideDelay: 500,
+  } as const,
 } as const;

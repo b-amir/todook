@@ -7,6 +7,7 @@ interface TodoState {
   error: string | null;
   isLoading: boolean;
   isDemoMode: boolean;
+  hasLoaded: boolean;
 }
 
 interface TodoActions {
@@ -29,6 +30,7 @@ export const useTodoStore = create<TodoState & TodoActions>()(
     error: null,
     isLoading: false,
     isDemoMode: false,
+    hasLoaded: false,
 
     setDemoMode: (isDemo: boolean) => {
       set({ isDemoMode: isDemo });
@@ -41,9 +43,9 @@ export const useTodoStore = create<TodoState & TodoActions>()(
       try {
         const response = await fetch(`/api/todos?demo=${isDemoMode}`);
         const { todos } = await response.json();
-        set({ todos, error: null });
+        set({ todos, error: null, hasLoaded: true });
       } catch {
-        set({ error: "Failed to load todos" });
+        set({ error: "Failed to load todos", hasLoaded: true });
       } finally {
         set({ isLoading: false });
       }

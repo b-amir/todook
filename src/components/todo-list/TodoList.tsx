@@ -10,7 +10,7 @@ import { useFastScrolling, useAutoScrollToTop } from "@/hooks";
 import { TODO_LIST_CONSTANTS } from "@/constants/todoList";
 
 export const TodoList = memo(function TodoList() {
-  const { todos, isLoading } = useTodoStore();
+  const { todos, isLoading, hasLoaded } = useTodoStore();
   const listRef = useRef<List | null>(null);
 
   const { isScrollingFast, handleScroll } = useFastScrolling(
@@ -28,7 +28,7 @@ export const TodoList = memo(function TodoList() {
 
   return (
     <div className={containerClassName} data-testid="todo-list">
-      {isLoading ? (
+      {!hasLoaded || isLoading ? (
         <TodoListLoading />
       ) : stableTodos.length === 0 ? (
         <TodoListEmpty />

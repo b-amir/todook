@@ -1,5 +1,5 @@
 export const setupEmptyTodos = () => {
-  cy.intercept("GET", "/api/todos", { todos: [] }).as("getEmptyTodos");
+  cy.intercept("GET", "/api/todos*", { todos: [] }).as("getEmptyTodos");
   cy.visit("/");
   cy.wait("@getEmptyTodos");
 };
@@ -47,7 +47,7 @@ export const setupStandardAPI = () => {
     },
   ];
 
-  cy.intercept("GET", "/api/todos", { todos }).as("getTodos");
+  cy.intercept("GET", "/api/todos*", { todos }).as("getTodos");
 
   cy.intercept("POST", "/api/todos", (req) => {
     const todoId = `new-${Date.now()}`;
@@ -69,7 +69,7 @@ export const setupStandardAPI = () => {
   }).as("createTodo");
 
   cy.intercept("PATCH", "/api/todos/*", (req) => {
-    const todoId = req.url.split("/").pop();
+    const todoId = req.url.split("/").pop()?.split("?")[0];
     const updates = req.body;
 
     todos = todos.map((todo) =>
@@ -87,7 +87,7 @@ export const setupStandardAPI = () => {
   }).as("updateTodo");
 
   cy.intercept("DELETE", "/api/todos/*", (req) => {
-    const todoId = req.url.split("/").pop();
+    const todoId = req.url.split("/").pop()?.split("?")[0];
 
     todos = todos.filter((todo) => todo.id !== todoId);
 

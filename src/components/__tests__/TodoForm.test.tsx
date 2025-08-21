@@ -24,9 +24,12 @@ describe("TodoForm", () => {
       clearError: mockClearError,
       todos: [],
       isLoading: false,
+      isDemoMode: false,
       loadTodos: jest.fn(),
       updateTodo: jest.fn(),
       deleteTodo: jest.fn(),
+      deleteAllTodos: jest.fn(),
+      setDemoMode: jest.fn(),
     });
   });
 
@@ -47,7 +50,7 @@ describe("TodoForm", () => {
     await user.type(input, "New todo");
     await user.click(button);
 
-    expect(mockAddTodo).toHaveBeenCalledWith("New todo");
+    expect(mockAddTodo).toHaveBeenCalledWith("New todo", false);
   });
 
   test("clears input after adding todo", async () => {
@@ -94,9 +97,12 @@ describe("TodoForm", () => {
       clearError: mockClearError,
       todos: [],
       isLoading: false,
+      isDemoMode: false,
       loadTodos: jest.fn(),
       updateTodo: jest.fn(),
       deleteTodo: jest.fn(),
+      deleteAllTodos: jest.fn(),
+      setDemoMode: jest.fn(),
     });
 
     render(<TodoForm />);
@@ -112,9 +118,12 @@ describe("TodoForm", () => {
       clearError: mockClearError,
       todos: [],
       isLoading: false,
+      isDemoMode: false,
       loadTodos: jest.fn(),
       updateTodo: jest.fn(),
       deleteTodo: jest.fn(),
+      deleteAllTodos: jest.fn(),
+      setDemoMode: jest.fn(),
     });
 
     render(<TodoForm />);
@@ -133,7 +142,7 @@ describe("TodoForm", () => {
 
     await user.type(input, "New todo{enter}");
 
-    expect(mockAddTodo).toHaveBeenCalledWith("New todo");
+    expect(mockAddTodo).toHaveBeenCalledWith("New todo", false);
   });
 
   test("prevents todo with only special characters", async () => {

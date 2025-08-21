@@ -15,7 +15,7 @@ export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
     register,
     handleSubmit,
     errors,
-    isValid,
+    hasText,
     handleToggleComplete,
     handleEdit,
     handleSaveEdit,
@@ -32,13 +32,15 @@ export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
   return (
     <>
       <li role="listitem" className={containerClassName}>
-        <TodoCheckbox
-          completed={todo.completed}
-          isPending={todo.isPending ?? false}
-          onToggle={handleToggleComplete}
-        />
+        <div className="flex-shrink-0 pt-0.5">
+          <TodoCheckbox
+            completed={todo.completed}
+            isPending={todo.isPending ?? false}
+            onToggle={handleToggleComplete}
+          />
+        </div>
 
-        <div className="flex-1 min-h-[24px] flex items-center">
+        <div className="flex-1 min-h-[24px] flex items-start">
           <TodoText
             todo={todo}
             isEditing={isEditing}
@@ -49,15 +51,17 @@ export const TodoItem = memo(function TodoItem({ todo }: { todo: Todo }) {
           />
         </div>
 
-        <TodoActions
-          todo={todo}
-          isEditing={isEditing}
-          hasValidText={isValid}
-          onEdit={handleEdit}
-          onSave={handleSubmit(handleSaveEdit)}
-          onCancel={handleCancelEdit}
-          onDelete={handleDeleteClick}
-        />
+        <div className="flex-shrink-0 pt-0.5">
+          <TodoActions
+            todo={todo}
+            isEditing={isEditing}
+            hasValidText={hasText}
+            onEdit={handleEdit}
+            onSave={handleSubmit(handleSaveEdit)}
+            onCancel={handleCancelEdit}
+            onDelete={handleDeleteClick}
+          />
+        </div>
       </li>
 
       <ConfirmationDialog

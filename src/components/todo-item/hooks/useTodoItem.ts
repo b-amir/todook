@@ -16,8 +16,12 @@ export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
     register,
     handleSubmit,
     formState: { errors, isValid },
+    watch,
     reset,
-  } = useTodoForm({ defaultText: todo.text, mode: "onBlur" });
+  } = useTodoForm({ defaultText: todo.text, mode: "onChange" });
+
+  const textValue = watch("text");
+  const hasText = Boolean(textValue && textValue.trim().length > 0);
 
   const handleToggleComplete = useCallback(() => {
     updateTodo(todo.id, { completed: !todo.completed }, isDemoMode);
@@ -77,6 +81,7 @@ export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
     handleSubmit,
     errors,
     isValid,
+    hasText,
     handleToggleComplete,
     handleEdit,
     handleSaveEdit,

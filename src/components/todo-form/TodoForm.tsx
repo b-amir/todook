@@ -35,14 +35,14 @@ export const TodoForm = memo(function TodoForm() {
 
   const onSubmit = useCallback(
     async (data: { text: string }) => {
+      reset(undefined, { keepErrors: false });
       try {
         await addTodo(data.text, isDemoMode);
-        reset(undefined, { keepErrors: false });
       } catch {
         // Error is handled by the store
       }
     },
-    [addTodo, reset, isDemoMode]
+    [addTodo, isDemoMode, reset]
   );
 
   const handleClearError = useCallback(() => {

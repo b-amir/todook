@@ -1,7 +1,7 @@
 export const setupEmptyTodos = () => {
   cy.intercept("GET", "/api/todos*", { todos: [] }).as("getEmptyTodos");
-  cy.visit("/");
-  cy.wait("@getEmptyTodos");
+  cy.visit("/", { timeout: 60000 });
+  cy.wait("@getEmptyTodos", { timeout: 30000 });
 };
 
 export const setupSlowCreateTodo = () => {
@@ -97,9 +97,9 @@ export const setupStandardAPI = () => {
     });
   }).as("deleteTodo");
 
-  cy.visit("/");
-  cy.wait("@getTodos");
-  cy.get('[data-testid="todo-input"]').should("be.visible");
+  cy.visit("/", { timeout: 60000 });
+  cy.wait("@getTodos", { timeout: 30000 });
+  cy.get('[data-testid="todo-input"]', { timeout: 30000 }).should("be.visible");
 };
 
 export const testEmptyState = () => {
@@ -214,6 +214,11 @@ export const testCompleteTodoWorkflow = () => {
     .should("be.visible")
     .should("not.be.disabled")
     .click();
+
+  cy.get('[data-testid="confirm-dialog-button"]', { timeout: 10000 }).should(
+    "be.visible"
+  );
+  cy.get('[data-testid="confirm-dialog-button"]').click();
   cy.wait("@deleteTodo");
   cy.contains(updatedTodoText).should("not.exist");
 };

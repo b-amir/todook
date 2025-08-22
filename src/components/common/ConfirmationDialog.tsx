@@ -70,6 +70,7 @@ export function ConfirmationDialog({
         <Button
           onClick={onConfirm}
           variant="contained"
+          data-testid="confirm-dialog-button"
           className={clsx(
             "text-white !rounded-lg",
             isDanger

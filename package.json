@@ -23,6 +23,7 @@
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
+    "db:seed": "tsx scripts/database-seed.ts",
     "db:setup": "tsx scripts/database-setup.ts"
   },
   "dependencies": {

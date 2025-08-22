@@ -3,6 +3,7 @@
 import React, { Component, ReactNode } from "react";
 import { AiOutlineExclamationCircle, AiOutlineReload } from "react-icons/ai";
 import { Button } from "@/components/ui/Button";
+import { config } from "@/lib/config";
 
 interface Props {
   children: ReactNode;
@@ -75,7 +76,7 @@ export class ErrorBoundary extends Component<Props, State> {
               We encountered an unexpected error. Please try again.
             </p>
 
-            {process.env.NODE_ENV === "development" && this.state.error && (
+            {config.nodeEnv === "development" && this.state.error && (
               <details className="w-full text-left">
                 <summary className="cursor-pointer text-xs text-brgray-300 hover:text-brgray-500 mb-1">
                   Error details (development only)

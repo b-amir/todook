@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
@@ -18,9 +17,9 @@ interface SampleTodo {
   updatedAt: string;
 }
 
-async function setupDemoData() {
+async function seedDemoData() {
   try {
-    console.log("🔧 Setting up demo data...");
+    console.log("🔧 Seeding demo data...");
 
     await prisma.$executeRaw`
       CREATE TABLE IF NOT EXISTS demo_todos (
@@ -50,35 +49,11 @@ async function setupDemoData() {
       `✅ Successfully seeded ${sampleTodos?.length} todos to demo table`
     );
   } catch (error) {
-    console.error("❌ Error setting up demo data:", error);
-    throw error;
+    console.error("❌ Error seeding demo data:", error);
+    process.exit(1);
   } finally {
     await prisma.$disconnect();
   }
 }
 
-async function runSetup() {
-  try {
-    console.log("🚀 Starting database setup...");
-
-    // Step 1: Generate Prisma client
-    console.log("📦 Generating Prisma client...");
-    execSync("npx prisma generate", { stdio: "inherit" });
-    console.log("✅ Prisma client generated");
-
-    // Step 2: Push database schema
-    console.log("🗄️  Pushing database schema...");
-    execSync("npx prisma db push", { stdio: "inherit" });
-    console.log("✅ Database schema pushed");
-
-    // Step 3: Setup demo data
-    await setupDemoData();
-
-    console.log("🎉 Database setup completed successfully!");
-  } catch (error) {
-    console.error("❌ Setup failed:", error);
-    process.exit(1);
-  }
-}
-
-runSetup();
+seedDemoData();

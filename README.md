@@ -136,8 +136,6 @@ cd todook
 npm install
 
 # 3. Setup database
-npm run db:generate
-npm run db:push
 npm run db:setup
 
 # 4. Start development
@@ -159,17 +157,14 @@ Visit `http://localhost:3000` 🎉
 ### Database Management
 
 ```bash
-# Generate Prisma client
-npm run db:generate
-
-# Push schema changes
-npm run db:push
-
-# Setup demo data
+# Complete database setup (generate + push + seed)
 npm run db:setup
 
-# Open Prisma Studio
-npm run db:studio
+# Individual database operations
+npm run db:generate    # Generate Prisma client
+npm run db:push        # Push schema changes
+npm run db:seed        # Seed demo data
+npm run db:studio      # Open Prisma Studio
 ```
 
 ## 🧪 Testing Strategy

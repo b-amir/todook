@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { config } from "./src/lib/config";
 
 const nextConfig: NextConfig = {
   output: "standalone",
@@ -27,7 +28,7 @@ const nextConfig: NextConfig = {
 
 let finalConfig = nextConfig;
 
-if (process.env.ANALYZE === "true") {
+if (config.analyze) {
   try {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const withBundleAnalyzer = require("@next/bundle-analyzer")({

@@ -2,7 +2,10 @@
 
 ![Todook Logo](public/screenshots/logo.png)
 
+🟢 [Demo](https://todook-turso.vercel.app/)
 </div>
+
+
 
 # 🧵 Todook - Task Management Application
 

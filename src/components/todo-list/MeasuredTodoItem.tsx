@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import { TodoItem } from "@/components/todo-item/TodoItem";
 import type { Todo } from "@/types/todo";
 import { TODO_LIST_CONSTANTS } from "@/constants/todoList";
@@ -19,41 +19,49 @@ export const MeasuredTodoItem = React.memo(function MeasuredTodoItem({
   );
   const lastHeightRef = useRef<number>(0);
 
+  const measureHeight = useCallback(() => {
+    if (elementRef.current) {
+      const rect = elementRef.current.getBoundingClientRect();
+      const height = Math.round(rect.height);
+
+      if (
+        Math.abs(height - lastHeightRef.current) >
+        TODO_LIST_CONSTANTS.MEASUREMENT_CHANGE_THRESHOLD
+      ) {
+        lastHeightRef.current = height;
+
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+
+        timeoutRef.current = setTimeout(() => {
+          onHeightChange(height);
+        }, TODO_LIST_CONSTANTS.HEIGHT_UPDATE_DEBOUNCE_MS);
+      }
+    }
+  }, [onHeightChange]);
+
   useEffect(() => {
     if (elementRef.current) {
-      const resizeObserver = new ResizeObserver((entries) => {
-        for (const entry of entries) {
-          const height = Math.round(entry.contentRect.height);
-
-          if (
-            Math.abs(height - lastHeightRef.current) >
-            TODO_LIST_CONSTANTS.MEASUREMENT_CHANGE_THRESHOLD
-          ) {
-            lastHeightRef.current = height;
-
-            if (timeoutRef.current) {
-              clearTimeout(timeoutRef.current);
-            }
-
-            timeoutRef.current = setTimeout(() => {
-              onHeightChange(height);
-            }, TODO_LIST_CONSTANTS.HEIGHT_UPDATE_DEBOUNCE_MS);
-          }
-        }
+      const resizeObserver = new ResizeObserver(() => {
+        requestAnimationFrame(measureHeight);
       });
 
       resizeObserver.observe(elementRef.current);
+      const initialTimeout = setTimeout(measureHeight, 10);
+
       return () => {
         resizeObserver.disconnect();
         if (timeoutRef.current) {
           clearTimeout(timeoutRef.current);
         }
+        clearTimeout(initialTimeout);
       };
     }
-  }, [onHeightChange]);
+  }, [measureHeight]);
 
   return (
-    <div ref={elementRef}>
+    <div ref={elementRef} className="w-full">
       <TodoItem todo={todo} />
     </div>
   );

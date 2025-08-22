@@ -1,7 +1,7 @@
 // TodoList constants
 export const TODO_LIST_CONSTANTS = {
   // Height calculations
-  BASE_TODO_ITEM_HEIGHT: 52, // py-2 (16px) + min-h-[24px] (24px) + gap-3 (12px)
+  BASE_TODO_ITEM_HEIGHT: 56, // py-2 (16px) + min-h-[24px] (24px) + gap-3 (12px)
   CONTAINER_BOTTOM_PADDING: 8, // pb-2 = 8px
   TEXT_WRAP_LINE_HEIGHT: 20, // Additional height per text line
   TEXT_CHARS_PER_LINE: 50, // Characters per line for text wrapping estimation
@@ -14,7 +14,7 @@ export const TODO_LIST_CONSTANTS = {
   HEIGHT_UPDATE_DEBOUNCE_MS: 100, // Debounce time for height updates
 
   // Default values
-  DEFAULT_ITEM_HEIGHT: 72, // Default height for missing items
+  DEFAULT_ITEM_HEIGHT: 56, //  Default height for missing items
   COMPLETION_RATIO_THRESHOLD: 0.7, // 70% completion ratio for theme change
 
   // List configuration

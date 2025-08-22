@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import { VariableSizeList as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
 import type { Todo } from "@/types/todo";
@@ -28,7 +28,7 @@ export const TodoListVirtualized = React.memo(function TodoListVirtualized({
 }: TodoListVirtualizedProps) {
   const stableTodos = useMemo(() => todos, [todos]);
 
-  const { getItemHeight, createHeightChangeHandler } = useRowHeights({
+  const { getItemHeight, createHeightChangeHandler, cleanup } = useRowHeights({
     todos: stableTodos,
     listRef,
   });
@@ -39,6 +39,12 @@ export const TodoListVirtualized = React.memo(function TodoListVirtualized({
     showSkeleton: showSkeletons,
     skeletonDelay,
   });
+
+  useEffect(() => {
+    return () => {
+      cleanup();
+    };
+  }, [cleanup]);
 
   return (
     <>

@@ -272,6 +272,10 @@ npm run db:setup
 - **Integration Tests**: Component interactions and state management
 - **E2E Tests**: Critical user journeys using Cypress
 
+---
+
+The testing strategy implements the **Testing Pyramid** methodology with a focus on **user behavior over implementation details**. The project uses **Jest** and **React Testing Library** for unit and integration tests, ensuring components function as users interact with them. **Cypress** executes end-to-end testing for critical user journeys, while **custom test utilities** establish consistent testing patterns across the application. This approach emphasizes **maintainable, readable tests** that document expected behavior.
+
 ### Test Structure
 
 ```

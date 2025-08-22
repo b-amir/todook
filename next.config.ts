@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   turbopack: {
     rules: {
       "*.svg": {
@@ -14,14 +15,29 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  allowedDevOrigins: [
+    "mdmy3c-3001.csb.app",
+    "*.csb.app",
+    "localhost:3000",
+    "localhost:3001",
+    "127.0.0.1:3000",
+    "127.0.0.1:3001",
+  ],
 };
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-  openAnalyzer: true,
-});
+let finalConfig = nextConfig;
 
-export default process.env.ANALYZE === "true"
-  ? withBundleAnalyzer(nextConfig)
-  : nextConfig;
+if (process.env.ANALYZE === "true") {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const withBundleAnalyzer = require("@next/bundle-analyzer")({
+      enabled: true,
+      openAnalyzer: true,
+    });
+    finalConfig = withBundleAnalyzer(nextConfig);
+  } catch {
+    console.warn("Bundle analyzer not available, skipping...");
+  }
+}
+
+export default finalConfig;

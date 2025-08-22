@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+  todook-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=file:./prisma/dev.db
+    command: npm run dev
+
+  todook-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - ANALYZE=false
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:./prisma/prod.db
+      - ANALYZE=false
+    volumes:
+      - ./prisma:/app/prisma
+    command: sh -c "npx prisma migrate deploy && node server.js"
+
+  todook-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      - NODE_ENV=test
+      - DATABASE_URL=file:./prisma/test.db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npx prisma migrate deploy && npm run test"
+
+  todook-e2e:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      - NODE_ENV=test
+      - DATABASE_URL=file:./prisma/e2e.db
+      - CYPRESS_baseUrl=http://todook-prod:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - todook-prod
+    command: sh -c "npx prisma migrate deploy && npm run test:e2e"

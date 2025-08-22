@@ -4,21 +4,36 @@
 
 </div>
 
-# Todook - Task Management Application
+# 🧵 Todook - Task Management Application
 
 A task management application built with Next.js 15. The application provides todo organization functionality with performance optimizations including virtualization and SQLite data persistence.
 
-## Overview
+## 📑 Table of Contents
+
+- [📋 Overview](#-overview)
+- [🎯 Demo & Screenshots](#-demo--screenshots)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Getting Started](#-getting-started)
+- [🐳 Docker Support](#-docker-support)
+- [🧪 Testing](#-testing)
+- [🚀 Deployment](#-deployment)
+- [📏 Project Scope & Deliberate Constraints](#-project-scope--deliberate-constraints)
+- [🤝 Contributing](#-contributing)
+- [🔧 Troubleshooting](#-troubleshooting)
+- [💬 Support](#-support)
+
+## 📋 Overview
 
 Todook provides a task management experience focused on simplicity and functionality. The application uses **Next.js 15** App Router, **Prisma ORM**, and **Zustand** state management to implement modern web development practices. Performance considerations include virtualized rendering for large datasets and **optimistic updates** for responsive user interactions.
 
 The application supports individual task organization and includes a dual-mode architecture (production and demo) that demonstrates database switching capabilities while maintaining data integrity.
 
-## Demo & Screenshots
+## 🎯 Demo & Screenshots
 
 ### Live Demo
 
-- **Live Demo**: [Deploy URL when available]
+- **🟢 Live Demo**: [https://todook-turso.vercel.app/](https://todook-turso.vercel.app/)
 
 ### Application Preview
 
@@ -77,7 +92,7 @@ flowchart TD
     class L performance
 ```
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 ### Core Technologies
 
@@ -113,7 +128,7 @@ flowchart TD
 **Decision**: Implemented React Window for consistent performance regardless of dataset size, enhanced with skeleton loading for fast scrolling scenarios and demo dataset for testing
 **Trade-offs**: Better performance with large lists and improved UX through skeleton loading, but increased complexity for simple use cases
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 todook/
@@ -194,7 +209,7 @@ flowchart TD
     class H performance
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -217,11 +232,17 @@ flowchart TD
    npm install
    ```
 
-3. **Set up the database**
+3. **Set up the database** (Required for data persistence)
 
    ```bash
+   # Generate Prisma client (creates database connection)
    npm run db:generate
+
+   # Create database tables and apply schema
    npm run db:push
+
+   # Seed with sample data (optional but recommended)
+   npm run db:setup
    ```
 
 4. **Start development server**
@@ -264,7 +285,33 @@ npm run db:studio
 npm run db:setup
 ```
 
-## Testing
+## 🐳 Docker Support
+
+Todook includes Docker support for development, testing, and production environments.
+
+### Quick Start
+
+```bash
+# Development
+docker-compose up todook-dev
+
+# Production
+docker-compose up todook-prod
+
+# Testing
+docker-compose up todook-test
+```
+
+### Services
+
+| Service       | Purpose                     | Port | Database  |
+| ------------- | --------------------------- | ---- | --------- |
+| `todook-dev`  | Development with hot reload | 3000 | `dev.db`  |
+| `todook-prod` | Production build            | 3001 | `prod.db` |
+| `todook-test` | Unit testing                | -    | `test.db` |
+| `todook-e2e`  | E2E testing with Cypress    | -    | `e2e.db`  |
+
+## 🧪 Testing
 
 ### Testing Approach
 
@@ -304,7 +351,7 @@ npm run test:e2e
 npm run cypress:open
 ```
 
-## Deployment
+## 🚀 Deployment
 
 ### Build Process
 
@@ -330,7 +377,7 @@ npm run build
 - **Code Splitting**: Route-based code splitting for reduced bundle sizes
 - **Bundle Analysis**: Bundle analyzer for monitoring application size
 
-## Project Scope & Deliberate Constraints
+## 📏 Project Scope & Deliberate Constraints
 
 ### Project Scale Decisions
 
@@ -357,7 +404,7 @@ This project operates within intentional constraints to maintain focus and deliv
 **Chosen**: Tailwind CSS + MUI over separate design system
 **Rationale**: Consistent design patterns with reduced setup time
 
-## Contributing
+## 🤝 Contributing
 
 ### Code Style Standards
 
@@ -389,7 +436,7 @@ test: add unit tests for todo store
 3. **Error Boundaries**: Include error handling for critical components
 4. **Performance**: Consider React.memo() and useMemo() for optimization
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
 ### Common Development Issues
 
@@ -422,6 +469,6 @@ npm audit
 
 ---
 
-## Support
+## 💬 Support
 
 For questions or issues, create an issue in the [GitHub repository](https://github.com/b-amir/todook) or contact the maintainer.

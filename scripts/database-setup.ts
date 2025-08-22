@@ -41,7 +41,7 @@ async function setupDemoData() {
     }
 
     console.log(
-      `✅ Successfully seeded ${sampleTodos.length} todos to demo table`
+      `✅ Successfully seeded ${sampleTodos?.length} todos to demo table`
     );
   } catch (error) {
     console.error("❌ Error setting up demo data:", error);

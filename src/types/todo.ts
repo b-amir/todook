@@ -37,7 +37,7 @@ export const todoSchema = z.object({
     )
     .transform((text) => text.trim())
     .refine(
-      (text) => text.length >= 3,
+      (text) => text?.length >= 3,
       "Todo must be at least 3 characters long after trimming"
     )
     .refine((text) => {

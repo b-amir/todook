@@ -11,7 +11,7 @@ export function DeleteAllButton() {
   const [showDeleteAllDialog, setShowDeleteAllDialog] = useState(false);
 
   const handleDeleteAllClick = () => {
-    if (todos.length === 0) return;
+    if (todos?.length === 0) return;
     setShowDeleteAllDialog(true);
   };
 
@@ -37,7 +37,7 @@ export function DeleteAllButton() {
         disabled={isDemoMode || isDeleting || todos?.length === 0}
         onClick={handleDeleteAllClick}
         className={`flex items-center gap-1.5 px-2 py-1.5 text-xs font-semibold border transition-colors duration-200 rounded-md shadow-sm ${
-          !isDemoMode && !isDeleting && todos.length > 0
+          !isDemoMode && !isDeleting && todos?.length > 0
             ? "bg-brpink-50 text-brpink-500/60 border-brpink-100/20 hover:bg-brpink-100 hover:text-brpink-50 cursor-pointer"
             : "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
         }`}
@@ -49,7 +49,7 @@ export function DeleteAllButton() {
       <ConfirmationDialog
         open={showDeleteAllDialog}
         title="Delete All Todos"
-        message={`Are you sure you want to delete all ${todos.length} todos? This action cannot be undone.`}
+        message={`Are you sure you want to delete all ${todos?.length} todos? This action cannot be undone.`}
         confirmText="Delete All"
         cancelText="Cancel"
         onConfirm={handleDeleteAllConfirm}

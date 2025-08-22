@@ -22,7 +22,7 @@ export function LoadingSpinner({
       data-testid="loading-spinner"
       className={clsx(
         "animate-spin text-current",
-        sizeClasses[size],
+        sizeClasses?.[size],
         className
       )}
     />

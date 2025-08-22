@@ -69,7 +69,7 @@ export const setupStandardAPI = () => {
   }).as("createTodo");
 
   cy.intercept("PATCH", "/api/todos/*", (req) => {
-    const todoId = req.url.split("/").pop()?.split("?")[0];
+    const todoId = req.url.split("/").pop()?.split("?")?.[0];
     const updates = req.body;
 
     todos = todos.map((todo) =>
@@ -87,7 +87,7 @@ export const setupStandardAPI = () => {
   }).as("updateTodo");
 
   cy.intercept("DELETE", "/api/todos/*", (req) => {
-    const todoId = req.url.split("/").pop()?.split("?")[0];
+    const todoId = req.url.split("/").pop()?.split("?")?.[0];
 
     todos = todos.filter((todo) => todo.id !== todoId);
 
@@ -168,12 +168,12 @@ export const testCompleteTodoWorkflow = () => {
 
   // Step 1: Create a new todo
   cy.get('[role="listitem"]').then(($initialItems) => {
-    const initialCount = $initialItems.length;
+    const initialCount = $initialItems?.length;
 
     cy.get('[data-testid="todo-input"]').clear().type(todoText);
     cy.get('[data-testid="add-todo-button"]').should("be.visible").click();
     cy.wait("@createTodo");
-    cy.get('[role="listitem"]').should("have.length", initialCount + 1);
+    cy.get('[role="listitem"]').should("have?.length", initialCount + 1);
   });
 
   cy.get('[data-testid="todo-list"]').should("be.visible");

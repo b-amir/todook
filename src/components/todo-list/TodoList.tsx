@@ -30,7 +30,7 @@ export const TodoList = memo(function TodoList() {
     <div className={containerClassName} data-testid="todo-list">
       {!hasLoaded || isLoading ? (
         <TodoListLoading />
-      ) : stableTodos.length === 0 ? (
+      ) : stableTodos?.length === 0 ? (
         <TodoListEmpty />
       ) : (
         <TodoListVirtualized

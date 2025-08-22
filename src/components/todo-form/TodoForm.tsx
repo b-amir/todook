@@ -24,14 +24,14 @@ export const TodoForm = memo(function TodoForm() {
     error,
     clearError: clearServerError,
   } = useTodoStore();
-  const isAdding = todos.some(
+  const isAdding = todos?.some(
     (todo) => todo.isPending && todo.id.startsWith("temp-")
   );
 
   const textValue = watch("text");
   const hasValidText =
     textValue &&
-    textValue.trim().length >= VALIDATION_CONSTANTS.TODO_TEXT_MIN_LENGTH;
+    textValue.trim()?.length >= VALIDATION_CONSTANTS.TODO_TEXT_MIN_LENGTH;
   const hasValidationErrors = !!errors.text;
 
   const onSubmit = useCallback(

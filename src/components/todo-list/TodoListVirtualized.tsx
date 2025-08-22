@@ -48,7 +48,7 @@ export const TodoListVirtualized = React.memo(function TodoListVirtualized({
             ref={listRef}
             height={height}
             width={width}
-            itemCount={stableTodos.length}
+            itemCount={stableTodos?.length}
             itemSize={getItemHeight}
             overscanCount={TODO_LIST_CONSTANTS.OVERSCAN_COUNT}
             itemData={stableTodos}
@@ -59,9 +59,9 @@ export const TodoListVirtualized = React.memo(function TodoListVirtualized({
           </List>
         )}
       </AutoSizer>
-      {stableTodos.length > 0 && (
+      {stableTodos?.length > 0 && (
         <div id="todo-count" className="sr-only">
-          {stableTodos.length} todo{stableTodos.length === 1 ? "" : "s"}
+          {stableTodos?.length} todo{stableTodos?.length === 1 ? "" : "s"}
         </div>
       )}
     </>

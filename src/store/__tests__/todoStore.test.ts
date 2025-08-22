@@ -70,8 +70,8 @@ describe("TodoStore", () => {
     });
 
     expect(result.current.todos).toHaveLength(1);
-    expect(result.current.todos[0].text).toBe("Test todo");
-    expect(result.current.todos[0].isPending).toBe(false);
+    expect(result.current.todos?.[0].text).toBe("Test todo");
+    expect(result.current.todos?.[0].isPending).toBe(false);
   });
 
   test("reverts optimistic update on error", async () => {
@@ -111,8 +111,8 @@ describe("TodoStore", () => {
       await result.current.updateTodo("1", { text: "New text" });
     });
 
-    expect(result.current.todos[0].text).toBe("New text");
-    expect(result.current.todos[0].isPending).toBe(false);
+    expect(result.current.todos?.[0].text).toBe("New text");
+    expect(result.current.todos?.[0].isPending).toBe(false);
   });
 
   test("reverts update on error", async () => {
@@ -133,7 +133,7 @@ describe("TodoStore", () => {
       await result.current.updateTodo("1", { text: "Failed update" });
     });
 
-    expect(result.current.todos[0].text).toBe("Original");
+    expect(result.current.todos?.[0].text).toBe("Original");
     expect(result.current.error).toContain("Failed to update todo");
   });
 

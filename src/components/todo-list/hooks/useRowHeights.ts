@@ -13,7 +13,7 @@ export function useRowHeights({ todos, listRef }: UseRowHeightsProps) {
 
   const getItemHeight = useCallback(
     (index: number): number => {
-      const todo = todos[index];
+      const todo = todos?.[index];
       if (!todo) return TODO_LIST_CONSTANTS.DEFAULT_ITEM_HEIGHT;
 
       if (rowHeights.current[index]) {
@@ -22,7 +22,7 @@ export function useRowHeights({ todos, listRef }: UseRowHeightsProps) {
 
       const baseHeight = TODO_LIST_CONSTANTS.BASE_TODO_ITEM_HEIGHT;
       const textLines = Math.ceil(
-        todo.text.length / TODO_LIST_CONSTANTS.TEXT_CHARS_PER_LINE
+        todo.text?.length / TODO_LIST_CONSTANTS.TEXT_CHARS_PER_LINE
       );
       const estimatedHeight =
         baseHeight +

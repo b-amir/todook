@@ -76,7 +76,7 @@ export async function updateTodo(
       id
     )) as Todo[];
 
-    return updatedTodos[0];
+    return updatedTodos?.[0];
   }
 
   return prisma.todo.update({

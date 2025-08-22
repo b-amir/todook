@@ -22,7 +22,7 @@ export const TodoItemRenderer = React.memo(function TodoItemRenderer({
   showSkeleton = false,
   skeletonDelay = 100,
 }: TodoItemRendererProps) {
-  const todo = todos[index];
+  const todo = todos?.[index];
   const { isLoading } = useSkeletonLoading({ showSkeleton, skeletonDelay });
   const handleHeightChange = onHeightChange(index);
 

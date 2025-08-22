@@ -21,7 +21,7 @@ export const useTodoItem = ({ todo }: UseTodoItemOptions) => {
   } = useTodoForm({ defaultText: todo.text, mode: "onChange" });
 
   const textValue = watch("text");
-  const hasText = Boolean(textValue && textValue.trim().length > 0);
+  const hasText = Boolean(textValue && textValue.trim()?.length > 0);
 
   const handleToggleComplete = useCallback(() => {
     updateTodo(todo.id, { completed: !todo.completed }, isDemoMode);

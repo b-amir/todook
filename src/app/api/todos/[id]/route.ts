@@ -9,10 +9,10 @@ export async function PATCH(
   try {
     const { id } = await params;
     const { searchParams } = new URL(request.url);
-    const isDemo = searchParams.get('demo') === 'true';
+    const isDemo = searchParams.get("demo") === "true";
     const updates = await request.json();
 
-    if (!updates || Object.keys(updates).length === 0) {
+    if (!updates || Object.keys(updates)?.length === 0) {
       return NextResponse.json(
         { error: API_CONSTANTS.ERROR_MESSAGES.UPDATE_DATA_REQUIRED },
         { status: API_CONSTANTS.STATUS_BAD_REQUEST }
@@ -36,8 +36,8 @@ export async function DELETE(
   try {
     const { id } = await params;
     const { searchParams } = new URL(request.url);
-    const isDemo = searchParams.get('demo') === 'true';
-    
+    const isDemo = searchParams.get("demo") === "true";
+
     await deleteTodo(id, isDemo);
     return NextResponse.json({ success: true });
   } catch {

@@ -71,8 +71,10 @@ describe("TodoForm", () => {
     render(<TodoForm />);
 
     const button = screen.getByRole("button", { name: /add/i });
+    expect(button).toBeDisabled();
 
-    await user.click(button);
+    const input = screen.getByPlaceholderText(/add a new todo/i);
+    await user.type(input, "{enter}");
 
     expect(mockAddTodo).not.toHaveBeenCalled();
   });
@@ -83,10 +85,9 @@ describe("TodoForm", () => {
 
     const input = screen.getByPlaceholderText(/add a new todo/i);
     const button = screen.getByRole("button", { name: /add/i });
-
     await user.type(input, "   ");
-    await user.click(button);
-
+    expect(button).toBeDisabled();
+    await user.type(input, "{enter}");
     expect(mockAddTodo).not.toHaveBeenCalled();
   });
 
@@ -151,9 +152,9 @@ describe("TodoForm", () => {
 
     const input = screen.getByPlaceholderText(/add a new todo/i);
     const button = screen.getByRole("button", { name: /add/i });
-
     await user.type(input, "!!!@@@###");
-    await user.click(button);
+    expect(button).toBeDisabled();
+    await user.type(input, "{enter}");
 
     expect(mockAddTodo).not.toHaveBeenCalled();
     expect(

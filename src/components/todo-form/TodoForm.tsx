@@ -32,6 +32,7 @@ export const TodoForm = memo(function TodoForm() {
   const hasValidText =
     textValue &&
     textValue.trim().length >= VALIDATION_CONSTANTS.TODO_TEXT_MIN_LENGTH;
+  const hasValidationErrors = !!errors.text;
 
   const onSubmit = useCallback(
     async (data: { text: string }) => {
@@ -69,7 +70,7 @@ export const TodoForm = memo(function TodoForm() {
           />
           <Button
             type="submit"
-            disabled={isAdding || !hasValidText}
+            disabled={isAdding || !hasValidText || hasValidationErrors}
             loading={isAdding}
             variant="primary"
             aria-label={isAdding ? "Adding todo..." : "Add todo"}
